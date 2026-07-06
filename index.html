@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wizon - Data Analytics Services & Solutions</title>
+  <style>
+    :root {
+      --ink: #111111;
+      --muted: #656565;
+      --line: #e4e0dc;
+      --paper: #f7f4ef;
+      --white: #ffffff;
+      --teal: #ef4136;
+      --green: #628c69;
+      --amber: #d59b35;
+      --red: #be1e2d;
+      --navy: #232323;
+      --warm: #ede5da;
+      --shadow: 0 18px 45px rgba(17, 17, 17, 0.13);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px clamp(20px, 5vw, 72px);
+      background: rgba(247, 244, 239, 0.94);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 156px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 142px;
+      height: auto;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+      background: rgba(239, 65, 54, 0.08);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--teal), var(--red));
+      border: 0;
+      border-radius: 6px;
+      font-weight: 750;
+      box-shadow: 0 10px 24px rgba(190, 30, 45, 0.2);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+      gap: clamp(28px, 5vw, 76px);
+      align-items: center;
+      position: relative;
+      padding: clamp(56px, 8vw, 110px) clamp(20px, 5vw, 72px) 64px;
+      background:
+        linear-gradient(90deg, rgba(247, 244, 239, 0.99), rgba(247, 244, 239, 0.86)),
+        repeating-linear-gradient(90deg, rgba(190, 30, 45, 0.08) 0 1px, transparent 1px 88px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -180px;
+      width: min(46vw, 520px);
+      aspect-ratio: 1080 / 574;
+      background: url("assets/wizon-shape-main.svg") center / contain no-repeat;
+      opacity: 0.11;
+      pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin-bottom: 28px;
+      color: #4f4b48;
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--white);
+      font-weight: 750;
+    }
+
+    .proof-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 720px;
+    }
+
+    .proof-row span {
+      padding: 7px 10px;
+      color: #5d5450;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .dashboard {
+      position: relative;
+      min-height: 440px;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid rgba(17, 17, 17, 0.09);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .dash-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .dash-title {
+      font-weight: 850;
+    }
+
+    .dash-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #52614d;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .dash-status::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .metric {
+      min-height: 92px;
+      padding: 14px;
+      background: #f9f5ef;
+      border: 1px solid rgba(17, 17, 17, 0.07);
+      border-radius: 8px;
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 24px;
+      line-height: 1.05;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .chart {
+      display: flex;
+      align-items: end;
+      gap: 10px;
+      height: 170px;
+      padding: 16px 14px 0;
+      border-radius: 8px;
+      background:
+        linear-gradient(to top, rgba(17, 17, 17, 0.08) 1px, transparent 1px) 0 0 / 100% 34px,
+        #fffdf9;
+      border: 1px solid rgba(17, 17, 17, 0.07);
+    }
+
+    .bar {
+      flex: 1;
+      min-width: 18px;
+      border-radius: 6px 6px 0 0;
+      background: var(--teal);
+    }
+
+    .bar:nth-child(2n) {
+      background: var(--green);
+    }
+
+    .bar:nth-child(3n) {
+      background: var(--amber);
+    }
+
+    .dash-note {
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      max-width: 250px;
+      padding: 14px 16px;
+      color: #3a302e;
+      background: #fff8ea;
+      border: 1px solid rgba(239, 65, 54, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 12px 25px rgba(39, 54, 64, 0.08);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    section {
+      padding: 76px clamp(20px, 5vw, 72px);
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 12px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .problem-band {
+      background: var(--white);
+    }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .question {
+      min-height: 150px;
+      padding: 22px;
+      color: #282321;
+      background: #fffaf5;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 760;
+    }
+
+    .question small {
+      display: block;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .services {
+      background: #f0e8dd;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 310px;
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(17, 17, 17, 0.07);
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.16;
+    }
+
+    .service-card p {
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag-list span {
+      padding: 6px 8px;
+      color: #4f302f;
+      background: #fff1ec;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .method {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(28px, 5vw, 70px);
+      align-items: start;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .method .eyebrow,
+    .method .section-head p {
+      color: #f3b7b0;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+    }
+
+    .step-number {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--teal), var(--red));
+      border-radius: 8px;
+      font-weight: 850;
+    }
+
+    .step h3 {
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: #e6ded8;
+    }
+
+    .trust {
+      background: var(--white);
+    }
+
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .client {
+      display: grid;
+      min-height: 76px;
+      place-items: center;
+      padding: 12px;
+      color: #3f3834;
+      background: #fffaf5;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+      gap: 28px;
+      align-items: stretch;
+      background: var(--warm);
+    }
+
+    .contact-copy,
+    .contact-panel {
+      padding: clamp(26px, 4vw, 42px);
+      background: var(--white);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 8px 22px rgba(17, 17, 17, 0.08);
+    }
+
+    .contact-copy h2 {
+      max-width: 760px;
+      margin-bottom: 14px;
+      font-size: clamp(32px, 4.5vw, 54px);
+      line-height: 1.05;
+    }
+
+    .contact-copy p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .contact-panel p {
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .contact-line {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 26px clamp(20px, 5vw, 72px);
+      color: #6a767e;
+      background: #111111;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: var(--white);
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .method,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .question-grid,
+      .service-grid,
+      .client-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dashboard {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 660px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        width: 100%;
+        gap: 4px;
+        font-size: 13px;
+      }
+
+      .nav a {
+        padding: 7px 8px;
+      }
+
+      .nav .cta {
+        flex-basis: 100%;
+        width: 96px;
+        margin-top: 8px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 42px;
+        overflow: hidden;
+      }
+
+      .hero > div:first-child,
+      .dashboard {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: 31px;
+        line-height: 1.08;
+        overflow-wrap: break-word;
+      }
+
+      .lead {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        font-size: 18px;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-actions .cta,
+      .hero-actions .secondary {
+        width: 100%;
+      }
+
+      .dash-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .metric-grid,
+      .question-grid,
+      .service-grid,
+      .client-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard {
+        padding: 18px;
+      }
+
+      .dash-note {
+        position: static;
+        max-width: none;
+        margin-top: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Wizon home">
+        <img class="brand-logo" src="assets/wizon-logo.svg" alt="Wizon">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#problems">Business questions</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#clients">Clients</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Data analytics & engineering services</p>
+          <h1 id="hero-title">Turn scattered business data into decisions you can trust.</h1>
+          <p class="lead">Wizon helps companies design, build, modernize, and operate analytics solutions that make decision-making faster, automate data flows, and bring business performance into view.</p>
+          <div class="hero-actions">
+            <a class="cta" href="#contact">Start a data conversation</a>
+            <a class="secondary" href="#services">Explore services</a>
+          </div>
+          <div class="proof-row" aria-label="Key service areas">
+            <span>Data analytics solutions</span>
+            <span>Tableau services</span>
+            <span>Data engineering</span>
+            <span>Analytics modernization</span>
+          </div>
+        </div>
+
+        <div class="dashboard" aria-label="Illustrative analytics dashboard">
+          <div class="dash-top">
+            <div class="dash-title">Management overview</div>
+            <div class="dash-status">Data flow active</div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>91%</strong>
+              <span>automated reporting coverage</span>
+            </div>
+            <div class="metric">
+              <strong>24h</strong>
+              <span>from fresh data to insight</span>
+            </div>
+            <div class="metric">
+              <strong>1</strong>
+              <span>shared version of truth</span>
+            </div>
+          </div>
+          <div class="chart" aria-hidden="true">
+            <div class="bar" style="height: 42%"></div>
+            <div class="bar" style="height: 58%"></div>
+            <div class="bar" style="height: 48%"></div>
+            <div class="bar" style="height: 72%"></div>
+            <div class="bar" style="height: 66%"></div>
+            <div class="bar" style="height: 84%"></div>
+            <div class="bar" style="height: 78%"></div>
+          </div>
+          <div class="dash-note">Prototype visual: replace later with real dashboard screenshots, project photos, or client-approved examples.</div>
+        </div>
+      </section>
+
+      <section class="problem-band" id="problems">
+        <div class="section-head">
+          <p class="eyebrow">Where Wizon can help</p>
+          <h2>When the business has questions, the data should not slow the answer down.</h2>
+          <p>A practical starting point for seeing where analytics, automation, and better reporting can create value.</p>
+        </div>
+        <div class="question-grid">
+          <div class="question">Do different teams make decisions from different numbers?<small>We help create a reliable analytics foundation and shared definitions.</small></div>
+          <div class="question">Is reporting still too manual, fragile, or slow?<small>We automate data flows and reduce repetitive work around reporting.</small></div>
+          <div class="question">Are existing dashboards showing activity, but not useful action?<small>We modernize analytics so managers see the few signals that matter.</small></div>
+          <div class="question">Do you need Tableau expertise without building a full internal team?<small>We support Tableau implementation, training, licensing, and adoption.</small></div>
+          <div class="question">Are your data volumes growing beyond the current setup?<small>We improve architecture for performance, flexibility, and future growth.</small></div>
+          <div class="question">Do you need missing data competence for a project?<small>We add experienced analytics and engineering capacity where your team needs it.</small></div>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>From first analytics solution to mature data platform.</h2>
+          <p>Wizon's service areas are grouped into clear paths, from a first analytics solution to more mature data capability.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Build your data analytics solution</h3>
+            <p>Design and develop cloud or on-premises analytics solutions that connect data sources, prepare trusted data, and deliver clear reporting for management.</p>
+            <div class="tag-list">
+              <span>Data modeling</span>
+              <span>Dashboards</span>
+              <span>Data flows</span>
+            </div>
+          </article>
+          <article class="service-card">
+            <h3>Transform your existing analytics setup</h3>
+            <p>Modernize slow, fragmented, or hard-to-maintain analytics environments so they create more value and can handle growing data volumes.</p>
+            <div class="tag-list">
+              <span>Modernization</span>
+              <span>Performance</span>
+              <span>Architecture</span>
+            </div>
+          </article>
+          <article class="service-card">
+            <h3>Tableau services and licenses</h3>
+            <p>Maximize the return on Tableau with expert services, training, license consultancy, purchases, and practical support for teams.</p>
+            <div class="tag-list">
+              <span>Tableau</span>
+              <span>Training</span>
+              <span>Licensing</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="method" id="approach">
+        <div class="section-head">
+          <p class="eyebrow">Working style</p>
+          <h2>A practical route from unclear data to useful decisions.</h2>
+          <p>A simple way to move from business questions to analytics that people can actually use.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Clarify the business questions</h3>
+              <p>Start from the decisions the company needs to make, then define the information needed to support them.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Connect and prepare the right data</h3>
+              <p>Bring data together from different systems, clean it, and make it usable for analytics.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Build the analytics layer</h3>
+              <p>Create dashboards, models, and reports that are clear enough for daily use and robust enough for management.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div>
+              <h3>Improve, train, and scale</h3>
+              <p>Support adoption, improve performance, and help teams build stronger data habits over time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust" id="clients">
+        <div class="section-head">
+          <p class="eyebrow">Experience</p>
+          <h2>Trusted by organizations with serious data needs.</h2>
+          <p>For this concept, client names are shown as clean text badges. Later these can become approved logos, case studies, or testimonials.</p>
+        </div>
+        <div class="client-grid" aria-label="Customers Wizon has worked with">
+          <div class="client">Telia</div>
+          <div class="client">Eesti Loto</div>
+          <div class="client">Ericsson</div>
+          <div class="client">LHV</div>
+          <div class="client">Luminor</div>
+          <div class="client">Magnum</div>
+          <div class="client">Regionaalhaigla</div>
+          <div class="client">SMIT</div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact</p>
+          <h2>Ready to start a data journey with a clearer first step?</h2>
+          <p>Tell us what you want to understand, improve, automate, or rebuild. Wizon can help turn that into a practical analytics roadmap and a working solution.</p>
+          <a class="cta" href="mailto:contact@wizon.info">Email Wizon</a>
+        </div>
+        <aside class="contact-panel" aria-label="Contact details">
+          <p>Wizon OÜ</p>
+          <span class="contact-line">Rotermanni 8, 10111 Tallinn, Estonia</span>
+          <span class="contact-line">contact@wizon.info</span>
+          <span class="contact-line">+372 602 0182</span>
+          <p>This is a prototype contact block. A real form, privacy consent, LinkedIn, and Google profile links can be added later.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <span><strong>Wizon OÜ</strong> - Data Analytics Services & Solutions</span>
+      <span>Concept prototype for evaluating structure and messaging</span>
+    </footer>
+  </div>
+</body>
+</html>

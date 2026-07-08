@@ -464,6 +464,97 @@
       background: var(--white);
     }
 
+    .events {
+      background: #fffaf5;
+    }
+
+    .event-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .event-card {
+      display: grid;
+      grid-template-columns: minmax(120px, 0.24fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(17, 17, 17, 0.06);
+    }
+
+    .event-card--past {
+      color: #6d6763;
+      background: #f4eee7;
+      box-shadow: none;
+    }
+
+    .event-date {
+      color: var(--red);
+      font-size: 18px;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+    .event-card--past .event-date {
+      color: #766d67;
+    }
+
+    .event-content h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.18;
+    }
+
+    .event-content p {
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .event-status,
+    .event-location,
+    .event-link {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .event-status {
+      padding: 5px 8px;
+      color: #4f302f;
+      background: #fff1ec;
+      border-radius: 6px;
+    }
+
+    .event-card--past .event-status {
+      color: #5f5752;
+      background: #e8ded5;
+    }
+
+    .event-location {
+      color: #52614d;
+    }
+
+    .event-link {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .event-empty {
+      margin: 0;
+      padding: 22px;
+      color: var(--muted);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
     .client-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -628,6 +719,7 @@
       .metric-grid,
       .question-grid,
       .service-grid,
+      .event-card,
       .client-grid {
         grid-template-columns: 1fr;
       }
@@ -654,6 +746,7 @@
         <a href="#problems">Business questions</a>
         <a href="#services">Services</a>
         <a href="#approach">Approach</a>
+        <a href="#events">Events</a>
         <a href="#clients">Clients</a>
         <a class="cta" href="#contact">Contact</a>
       </nav>
@@ -807,6 +900,17 @@
         </div>
       </section>
 
+      <section class="events" id="events">
+        <div class="section-head">
+          <p class="eyebrow">Events</p>
+          <h2>Upcoming sessions and past conversations.</h2>
+          <p>Maintain this calendar in a simple JSON file. Upcoming events stay prominent, while expired events remain visible as past activity.</p>
+        </div>
+        <div class="event-grid" data-events-list aria-live="polite">
+          <p class="event-empty">Loading events...</p>
+        </div>
+      </section>
+
       <section class="trust" id="clients">
         <div class="section-head">
           <p class="eyebrow">Experience</p>
@@ -847,5 +951,6 @@
       <span>Concept prototype for evaluating structure and messaging</span>
     </footer>
   </div>
+  <script src="events.js" defer></script>
 </body>
 </html>

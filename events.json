@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026-09-15",
+    "title": "Tableau training day",
+    "location": "Tallinn",
+    "description": "A practical session for teams that want to improve analytics adoption and dashboard quality.",
+    "url": ""
+  },
+  {
+    "date": "2026-11-05",
+    "title": "AI readiness for business analytics",
+    "location": "Online",
+    "description": "A focused session on metadata, definitions, and business context that help AI answer business questions reliably.",
+    "url": ""
+  },
+  {
+    "date": "2026-05-20",
+    "title": "Data modernization breakfast",
+    "location": "Tallinn",
+    "description": "A morning discussion about moving from manual reporting to trusted, automated analytics flows.",
+    "url": ""
+  }
+]

@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-11-01",
+    "endDate": "2026-11-03",
+    "title": "Tableau algajate koolitus",
+    "location": "Wizoni kontor",
+    "description": "",
+    "url": ""
+  },
+  {
+    "date": "2026-10-16",
+    "endDate": "2026-10-20",
+    "title": "Tallinn Data Week",
+    "location": "Tallinn",
+    "description": "",
+    "url": ""
+  },
+  {
     "date": "2026-09-15",
     "title": "Tableau training day",
     "location": "Tallinn",

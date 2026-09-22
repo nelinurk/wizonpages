@@ -47,7 +47,7 @@
         return event && parseEventDate(event.date);
       })
       .map(function (event) {
-        var status = isPastEvent(event.date, today) ? "past" : "upcoming";
+        var status = isPastEvent(event.endDate || event.date, today) ? "past" : "upcoming";
 
         return Object.assign({}, event, {
           status: status,
@@ -101,17 +101,21 @@
     target.innerHTML = preparedEvents
       .map(function (event) {
         var statusLabel = event.status === "past" ? "Past event" : "Upcoming";
+        var dateLabel = formatEventDate(event.date);
+        if (event.endDate && event.endDate !== event.date) {
+          dateLabel += " – " + formatEventDate(event.endDate);
+        }
         var action = event.url
           ? '<a class="event-link" href="' + escapeHtml(event.url) + '">Event details</a>'
           : "";
 
         return [
           '<article class="event-card event-card--' + event.status + '">',
-          '  <div class="event-date">' + escapeHtml(formatEventDate(event.date)) + "</div>",
+          '  <div class="event-date">' + escapeHtml(dateLabel) + "</div>",
           '  <div class="event-content">',
           '    <span class="event-status">' + statusLabel + "</span>",
           "    <h3>" + escapeHtml(event.title) + "</h3>",
-          "    <p>" + escapeHtml(event.description) + "</p>",
+          event.description ? "    <p>" + escapeHtml(event.description) + "</p>" : "",
           event.location ? '    <span class="event-location">' + escapeHtml(event.location) + "</span>" : "",
           action,
           "  </div>",

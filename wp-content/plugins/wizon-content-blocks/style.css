@@ -1,0 +1,78 @@
+/* Only the new managed blocks. Existing pages and preview 335 stay untouched. */
+.wizon-managed-team.wizon-about-people__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 24px;
+}
+.wizon-managed-team > .wizon-managed-person { margin: 0; }
+.wizon-managed-person.wizon-person-card {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	min-height: 0;
+	height: 100%;
+	border-radius: 8px;
+}
+.wizon-managed-person .wizon-person-card__portrait {
+	height: auto;
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+.wizon-managed-person .wizon-person-card__portrait img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+.wizon-managed-person .wizon-person-card__portrait figcaption { margin: 8px 16px; font-size: 14px; }
+.wizon-managed-person .wizon-person-card__content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	min-width: 0;
+	padding: 24px;
+}
+.wizon-managed-person .wizon-person-card__name,
+.wizon-managed-person .wizon-person-card__role { overflow-wrap: anywhere; }
+.wizon-managed-person__contacts {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 44px;
+	column-gap: 12px;
+	row-gap: 6px;
+	align-items: start;
+	margin-top: auto;
+	padding-top: 12px;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.wizon-managed-person__contacts p { grid-column: 1; margin: 0; font-size: 16px; line-height: 1.5; }
+.wizon-managed-person__contacts a { overflow-wrap: anywhere; }
+.wizon-managed-person__linkedin {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	grid-column: 2;
+	grid-row: 1 / span 2;
+	align-self: end;
+	justify-self: end;
+	min-width: 44px;
+	min-height: 44px;
+	color: var(--wizon-blue, #0078c8);
+	text-decoration: none;
+}
+.wizon-managed-person__linkedin svg { display: block; width: 22px; height: 22px; }
+.wizon-managed-person__contacts a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+.wizon-managed-logos .wizon-managed-logo--small img { max-width: 112px; max-height: 38px; }
+.wizon-managed-logos .wizon-managed-logo--large img { max-width: 160px; max-height: 64px; }
+@media (max-width: 1024px) {
+	.wizon-managed-team.wizon-about-people__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+	.wizon-managed-team.wizon-about-people__grid { grid-template-columns: 1fr; gap: 20px; }
+	.wizon-managed-person .wizon-person-card__content { padding: 20px; }
+}

@@ -1,0 +1,21 @@
+/* The template part, not its child, must be sticky so its containing block is
+   the whole site. The optional event announcement remains in normal flow. */
+html { --wizon-nav-height: 84px; --wizon-toolbar-height: 0px; scroll-padding-top: calc(var(--wizon-nav-height) + var(--wizon-toolbar-height) + 16px); }
+body:not(.wp-admin) .wp-site-blocks > header.wp-block-template-part:has(.wizon-header) {
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ background: #fff;
+ box-shadow: 0 1px 0 rgb(17 17 17 / 7%), 0 4px 16px rgb(17 17 17 / 3%);
+}
+body.admin-bar .wp-site-blocks > header.wp-block-template-part:has(.wizon-header) { top: 32px; }
+@media (max-width: 782px) {
+ body.admin-bar .wp-site-blocks > header.wp-block-template-part:has(.wizon-header) { top: 46px; }
+}
+@media (max-width: 600px) {
+ /* WordPress changes its toolbar to absolute positioning at this breakpoint. */
+ body.admin-bar .wp-site-blocks > header.wp-block-template-part:has(.wizon-header) { top: 0; }
+}
+@media print {
+ body:not(.wp-admin) .wp-site-blocks > header.wp-block-template-part:has(.wizon-header) { position: static; box-shadow: none; }
+}

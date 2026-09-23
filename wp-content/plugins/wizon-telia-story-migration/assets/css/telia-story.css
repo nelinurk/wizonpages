@@ -1,0 +1,141 @@
+.wizon-story.wizon-telia-story .wizon-story__layout.wizon-telia-story__layout {
+  display: block;
+}
+
+.wizon-story.wizon-telia-story .wizon-story__narrative.wizon-telia-story__narrative {
+  gap: 24px;
+  margin-inline: auto !important;
+  max-width: 840px;
+  width: 100%;
+}
+
+.wizon-telia-story__narrative > *,
+.wizon-telia-story__intro > * {
+  margin-block-start: 0;
+}
+
+.wizon-telia-story__eyebrow {
+  color: var(--wizon-blue);
+}
+
+.wizon-telia-story__lead {
+  color: var(--wizon-body);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0;
+  max-width: 800px;
+}
+
+.wizon-telia-story__intro {
+  background: var(--wizon-subtle);
+  border-left: 3px solid var(--wizon-blue);
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 32px;
+}
+
+.wizon-telia-story__paragraph {
+  color: var(--wizon-body);
+  font-size: 17px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.wizon-telia-story__paragraph br {
+  content: "";
+  display: block;
+  margin-top: 16px;
+}
+
+.wizon-telia-story__byline,
+.wizon-telia-story__published {
+  color: var(--wizon-muted);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 0;
+}
+
+.wizon-telia-story__section-title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 40px;
+  margin: 24px 0 0;
+}
+
+.wizon-telia-story__quote-panel {
+  border-left: 3px solid var(--wizon-red);
+  margin-block: 8px;
+  padding: 28px 32px;
+}
+
+.wizon-telia-story__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.wizon-telia-story__actions .wp-block-button {
+  margin: 0;
+}
+
+.single-wizon_story .wizon-telia-story__eyebrow {
+  margin-top: 0;
+}
+
+@media (max-width: 782px) {
+  .wizon-telia-story__lead {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .wizon-telia-story__intro,
+  .wizon-telia-story__quote-panel {
+    padding: 24px;
+  }
+
+  .wizon-telia-story__section-title {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wizon-telia-story__narrative {
+    gap: 20px;
+  }
+
+  .wizon-telia-story__lead,
+  .wizon-telia-story__paragraph {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .wizon-telia-story__intro,
+  .wizon-telia-story__quote-panel {
+    padding: 20px;
+  }
+
+  .wizon-telia-story__section-title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .wizon-telia-story__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .wizon-telia-story__actions .wp-block-button,
+  .wizon-telia-story__actions .wp-block-button__link {
+    width: 100%;
+  }
+}

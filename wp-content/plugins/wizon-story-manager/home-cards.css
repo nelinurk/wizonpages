@@ -1,0 +1,72 @@
+/* Shared, data-driven homepage story cards. No content is hidden or truncated. */
+.wizon-references__grid > li { min-width: 0; }
+.wizon-references__card.wsm-home-card {
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    padding: 0;
+    border: 1px solid #e4e4e4;
+    border-radius: 18px;
+    background: #f7f7f7;
+    box-sizing: border-box;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.wsm-home-card > .wsm-home-card__link {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    min-width: 0;
+    max-width: none;
+    padding: 28px;
+    margin: 0;
+    border-radius: inherit;
+    box-sizing: border-box;
+    color: #171717;
+    text-decoration: none;
+}
+.wsm-home-card__link > * { margin: 0; max-width: 100%; }
+.wsm-home-card__brand {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    flex: 0 0 64px;
+}
+.wsm-home-card__brand img { display: block; width: auto; height: auto; max-width: min(200px,100%); max-height: 64px; object-fit: contain; }
+.wsm-home-card__client { font-family: var(--wp--preset--font-family--titillium-web, sans-serif); font-size: 20px; font-weight: 600; line-height: 1.3; }
+.wsm-home-card .wizon-references__title.wsm-home-card__title {
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    font-size: clamp(22px,1.8vw,26px);
+    line-height: 1.28;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
+    color: #171717;
+}
+.wsm-home-card .wizon-references__body.wsm-home-card__excerpt {
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #515151;
+    overflow-wrap: anywhere;
+}
+.wsm-home-card__link > .wsm-home-card__partnership { margin-top: auto; padding-top: 4px; font-size: 15px; line-height: 1.4; color: #515151; }
+.wsm-home-card:hover, .wsm-home-card:focus-within { border-color: #0076c8; box-shadow: 0 8px 24px rgb(17 17 17 / 7%); }
+.wsm-home-card__link:hover .wsm-home-card__title { color: #006bb7; }
+.wsm-home-card__link:focus-visible { outline: 3px solid #0076c8; outline-offset: 4px; }
+.wsm-reference-anchor { display: block; height: 0; margin: 0; padding: 0; scroll-margin-top: 160px; }
+@media (max-width: 767px) {
+    .wsm-home-card > .wsm-home-card__link { padding: 24px; gap: 16px; }
+    .wsm-home-card .wizon-references__title.wsm-home-card__title { font-size: 23px; }
+    .wsm-home-card .wizon-references__body.wsm-home-card__excerpt { font-size: 16px; }
+    .wsm-reference-anchor { scroll-margin-top: 120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .wizon-references__card.wsm-home-card { transition: none; }
+}

@@ -1,0 +1,85 @@
+/*
+Theme Name: Wizon
+Theme URI: https://wizon.ee/
+Author: WebTailor
+Author URI: https://webtailor.ee/
+Description: A custom full site editing theme for Wizon, built with reusable Gutenberg patterns and a controlled design system.
+Version: 1.2.22
+Requires at least: 6.6
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wizon
+Tags: block-patterns, custom-colors, custom-logo, editor-style, full-site-editing, wide-blocks
+*/
+
+/*
+ * The project-level component styles live in assets/css/site.css.
+ * This file keeps the theme metadata and a small set of resilient defaults.
+ */
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+:where(img, svg, video) {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+:where(a:not(.wp-element-button)) {
+	text-underline-offset: 0.16em;
+	text-decoration-thickness: 0.08em;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline: 3px solid var(--wp--preset--color--brand-blue, #0072ce);
+	outline-offset: 3px;
+}
+
+.wp-site-blocks {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.wp-site-blocks > main {
+	flex: 1 0 auto;
+}
+
+.wp-block-post-content :where(a:not(.wp-element-button)) {
+	overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}

@@ -1,0 +1,168 @@
+/* Privacy policy pages */
+.wizon-privacy-page {
+  margin: 0;
+}
+
+.wizon-privacy-hero {
+  background: var(--wizon-subtle);
+  padding-block: clamp(72px, 8vw, 112px);
+}
+
+.wizon-privacy-hero__inner {
+  align-items: end;
+  display: grid;
+  gap: clamp(32px, 6vw, 96px);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.54fr);
+}
+
+.wizon-privacy-hero__copy,
+.wizon-privacy-hero__meta,
+.wizon-privacy-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.wizon-privacy-hero__copy {
+  gap: 20px;
+}
+
+.wizon-privacy-hero__meta {
+  border-left: 2px solid var(--wizon-blue);
+  gap: 10px;
+  padding: 4px 0 4px 24px;
+}
+
+.wizon-privacy-hero__copy > *,
+.wizon-privacy-hero__meta > *,
+.wizon-privacy-section > * {
+  margin-block: 0;
+}
+
+.wizon-privacy-hero__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  max-width: 920px;
+}
+
+.wizon-privacy-hero__summary {
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.wizon-privacy-hero__summary {
+  max-width: 760px;
+}
+
+.wizon-privacy-content {
+  background: var(--wizon-white);
+  padding-block: clamp(72px, 8vw, 112px);
+}
+
+.wizon-privacy-content__inner {
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 960px;
+}
+
+.wizon-privacy-section {
+  gap: 18px;
+  padding-block: 40px;
+  scroll-margin-top: 32px;
+}
+
+.wizon-privacy-section:first-child {
+  padding-top: 0;
+}
+
+.wizon-privacy-section:last-child {
+  padding-bottom: 0;
+}
+
+.wizon-privacy-section + .wizon-privacy-section {
+  border-top: 1px solid var(--wizon-border-soft);
+}
+
+.wizon-privacy-section__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: clamp(27px, 3vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.24;
+  scroll-margin-top: 32px;
+}
+
+.wizon-privacy-section p {
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.65;
+  max-width: 880px;
+}
+
+.wizon-privacy-section a {
+  color: var(--wizon-red);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.wizon-privacy-section a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.wizon-privacy-section a:focus-visible {
+  border-radius: 2px;
+  outline: 3px solid color-mix(in srgb, var(--wizon-blue), transparent 55%);
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .wizon-privacy-hero__inner {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wizon-privacy-hero__meta {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wizon-privacy-hero,
+  .wizon-privacy-content {
+    padding-block: 64px;
+  }
+
+  .wizon-privacy-hero__copy {
+    gap: 16px;
+  }
+
+  .wizon-privacy-hero__meta {
+    padding-left: 18px;
+  }
+
+  .wizon-privacy-hero__summary,
+  .wizon-privacy-section p {
+    font-size: 17px;
+  }
+
+  .wizon-privacy-section {
+    gap: 14px;
+    padding-block: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wizon-privacy-section,
+  .wizon-privacy-section__title {
+    scroll-behavior: auto;
+  }
+}

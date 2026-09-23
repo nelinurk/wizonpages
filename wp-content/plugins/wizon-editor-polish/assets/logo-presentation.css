@@ -1,0 +1,91 @@
+/* Keep the logo row on the band's vertical centre, with the caption above. */
+.wizon-section.wizon-logo-wall {
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+.wizon-logo-wall .wizon-logo-wall__inner {
+	display: grid;
+	grid-template-rows: 1fr auto 1fr;
+	row-gap: 18px;
+}
+
+.wizon-logo-wall .wizon-logo-wall__header {
+	grid-row: 1;
+	margin: 0;
+}
+
+.wizon-logo-wall .wizon-logo-wall__carousel {
+	grid-row: 2;
+	min-width: 0;
+	margin: 0;
+}
+
+/* Equal flexible rows mirror the caption's height without fixed text offsets. */
+.wizon-logo-wall .wizon-logo-wall__inner::after {
+	content: "";
+	grid-row: 3;
+}
+
+/* An empty optional gallery must not reserve space below the marquee. */
+.wizon-logo-wall > .wp-block-gallery:empty {
+	margin-block: 0;
+}
+
+@media (max-width: 767px) {
+	.wizon-section.wizon-logo-wall {
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
+	.wizon-logo-wall .wizon-logo-wall__inner {
+		row-gap: 8px;
+	}
+}
+
+/* Keep the original brand colours at rest as well as on hover/focus. */
+.wizon-logo-wall .wizon-logo-wall__logo img,
+.wizon-logo-wall .wizon-logo-wall__item img {
+	filter: none;
+	opacity: 1;
+	transform: none;
+}
+
+/* Hover pauses the existing animation in place; leaving resumes that position. */
+@media (hover: hover) {
+	.wizon-logo-wall__carousel:hover .wizon-logo-wall__track.is-marquee-ready,
+	.wizon-logo-wall__carousel:hover .wizon-logo-wall__list.is-marquee-ready {
+		animation-play-state: paused;
+	}
+}
+
+/* Keyboard users get a stable, scrollable list with no off-screen focus targets.
+ * Restrict this to focus-visible so a mouse click never moves its own target. */
+.wizon-logo-wall__carousel:has(a:focus-visible) .wizon-logo-wall__viewport {
+	overflow-x: auto;
+	mask-image: none;
+}
+
+.wizon-logo-wall__carousel:has(a:focus-visible) .wizon-logo-wall__track.is-marquee-ready,
+.wizon-logo-wall__carousel:has(a:focus-visible) .wizon-logo-wall__list.is-marquee-ready {
+	animation: none;
+	transform: none;
+}
+
+.wizon-logo-wall__carousel:has(a:focus-visible) [data-wizon-logo-clone] {
+	display: none;
+}
+
+/* Preserve the site's reduced-motion preference without requiring a button. */
+@media (prefers-reduced-motion: reduce) {
+	.wizon-logo-wall .wizon-logo-wall__track.is-marquee-ready,
+	.wizon-logo-wall .wizon-logo-wall__list.is-marquee-ready {
+		animation: none;
+		transform: none;
+	}
+	.wizon-logo-wall .wizon-logo-wall__viewport {
+		overflow-x: auto;
+	}
+	.wizon-logo-wall [data-wizon-logo-clone] {
+		display: none;
+	}
+}

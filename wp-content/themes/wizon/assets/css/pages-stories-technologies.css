@@ -1,0 +1,1383 @@
+/* Shared editorial page foundations */
+.wizon-editorial-page {
+  margin-block: 0;
+}
+
+.wizon-page-eyebrow {
+  color: var(--wizon-blue);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 16px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wizon-page-hero {
+  background: var(--wizon-white);
+  padding-block: 96px;
+}
+
+.wizon-page-hero__inner {
+  align-items: center;
+  display: grid;
+  gap: 64px;
+  grid-template-columns: minmax(0, 820px) minmax(0, 360px);
+}
+
+.wizon-page-hero--stories .wizon-page-hero__inner {
+  gap: 48px;
+  grid-template-columns: minmax(0, 820px) minmax(0, 270px);
+}
+
+.wizon-page-hero--stories {
+  padding-block: 72px;
+}
+
+.wizon-page-hero--stories .wizon-page-hero__copy {
+  gap: 20px;
+}
+
+.wizon-page-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wizon-page-hero__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: clamp(48px, 4.45vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 1.094;
+  margin: 0;
+}
+
+.wizon-page-hero__lead {
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  margin: 0;
+}
+
+.wizon-page-hero__artwork {
+  height: 360px;
+  margin: 0;
+  width: 360px;
+}
+
+.wizon-page-hero__artwork img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.wizon-page-hero--technologies .wizon-page-hero__inner {
+  gap: 64px;
+  grid-template-columns: minmax(0, 820px) minmax(0, 360px);
+}
+
+.wizon-page-hero--technologies .wizon-page-hero__artwork {
+  height: 360px;
+  width: 360px;
+}
+
+:is(.wizon-page-hero--stories, .wizon-page-hero--technologies) .wizon-page-hero__title {
+  font-size: clamp(48px, 4.45vw, 64px);
+}
+
+.wizon-page-hero--stories .wizon-page-hero__title {
+  max-width: 690px;
+}
+
+.wizon-page-hero--stories .wizon-page-hero__lead {
+  max-width: 760px;
+}
+
+/* Success-stories proof ledger */
+.wizon-page-proof {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+}
+
+.wizon-page-proof > * {
+  margin-inline: 0 !important;
+  width: 100%;
+}
+
+.wizon-page-proof::before {
+  background: var(--wizon-blue);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: -18px;
+  width: 36px;
+}
+
+.wizon-page-proof__label {
+  color: var(--wizon-blue);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  margin: 10px 0 0;
+  text-transform: uppercase;
+}
+
+.wizon-page-proof__row {
+  border-bottom: 1px solid var(--wizon-border-soft);
+  padding-block: 16px 18px;
+}
+
+.wizon-page-proof__row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.wizon-page-proof__client {
+  color: var(--wizon-ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  margin: 0;
+}
+
+.wizon-page-proof__value-row {
+  align-items: center;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 120px minmax(0, 1fr);
+  margin-top: 6px;
+}
+
+.wizon-page-proof__value {
+  color: var(--wizon-red);
+  font-family: "Lora", serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 0;
+}
+
+.wizon-page-proof__detail {
+  color: #5e5e5e;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+}
+
+/* Success-stories query and cards */
+.wizon-stories-section {
+  background: var(--wizon-subtle);
+  padding-block: 96px;
+}
+
+.wizon-stories-query,
+.wizon-stories-query > .wp-block-post-template,
+.wizon-story-list {
+  margin-block: 0;
+}
+
+.wizon-story-list,
+.wp-block-post-template.wizon-story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  list-style: none;
+  padding: 0;
+}
+
+.wizon-story-list > *,
+.wp-block-post-template.wizon-story-list > * {
+  margin-block-start: 0;
+}
+
+.wp-block-post-template.wizon-story-list > li,
+.wp-block-post-template.wizon-story-list > li > .wp-block-post-content,
+.wp-block-post-template.wizon-story-list > li > .wizon-story-card {
+  margin: 0;
+  width: 100%;
+}
+
+.wizon-story-card {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  overflow: hidden;
+  padding: 32px;
+}
+
+.wizon-story-card__image {
+  grid-row: 1 / span 6;
+  margin: 0;
+}
+
+.wizon-story-card__image img {
+  border-radius: 8px;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.wizon-story-card__terms,
+.wizon-story-card__terms a {
+  color: var(--wizon-red);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.wizon-story-card__title,
+.wizon-story-card__title a {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  text-decoration: none;
+}
+
+.wizon-story-card__meta {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.wizon-story-card__client,
+.wizon-story-card__year {
+  color: var(--wizon-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.wizon-story-card__client a {
+  color: var(--wizon-blue);
+}
+
+.wizon-story-card__year {
+  color: var(--wizon-red);
+}
+
+.wizon-story-card__result {
+  color: var(--wizon-body);
+  flex-basis: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.wizon-story-card__excerpt,
+.wizon-story-card__excerpt p {
+  color: var(--wizon-body);
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.wizon-story-card__link {
+  align-self: start;
+  color: var(--wizon-red);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+/* Telia has a dedicated long-form page. On the Edulood/References overview,
+ * keep it aligned with the standard case-study composition while presenting a
+ * concise preview instead of repeating the complete article. */
+.wizon-story--linked-preview .wizon-story__narrative {
+  gap: 18px;
+}
+
+.wizon-story--linked-preview .wizon-story__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wizon-story--linked-preview .wizon-story__title a:hover,
+.wizon-story--linked-preview .wizon-story__title a:focus-visible {
+  color: var(--wizon-blue);
+}
+
+.wizon-story__logo-stage--telia span {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.wizon-story-preview__eyebrow {
+  color: var(--wizon-blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.78px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.wizon-story-preview__lead {
+  color: var(--wizon-body);
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  max-width: 720px;
+}
+
+.wizon-story--linked-preview .wizon-story__meta-panel {
+  padding-block: 18px;
+}
+
+.wizon-story--linked-preview .wizon-story-card__link {
+  margin-top: 6px;
+  width: fit-content;
+}
+
+.wizon-story {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  padding: 48px;
+}
+
+.wizon-story__layout {
+  align-items: start;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 360px minmax(0, 1fr);
+}
+
+.wizon-story__aside,
+.wizon-story__narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/*
+ * Gutenberg applies flow margins between nested blocks even when their
+ * component already owns spacing through flex or grid gaps. Reset those
+ * margins here so the success-story composition keeps the exact Figma
+ * rhythm instead of doubling the vertical space between rows and panels.
+ */
+.wizon-story__layout > *,
+.wizon-story__aside > *,
+.wizon-story__proof > *,
+.wizon-story__narrative > *,
+.wizon-story__details > * {
+  margin-block-start: 0;
+}
+
+.wizon-story__logo-stage {
+  align-items: center;
+  background: var(--wizon-subtle);
+  border-radius: 8px;
+  display: flex;
+  height: 144px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px 10px;
+}
+
+.wizon-story__logo {
+  height: 120px;
+  margin: 0;
+  width: 340px;
+}
+
+.wizon-story__logo img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.wizon-story__logo--tervisekassa {
+  max-width: 222px;
+}
+
+.wizon-story__proof {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wizon-story__metric,
+.wizon-story__meta-panel {
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.wizon-story__metric {
+  background: var(--wizon-subtle);
+}
+
+.wizon-story__meta-panel {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+}
+
+.wizon-story__metric-value {
+  color: var(--wizon-red);
+  font-family: "Lora", serif;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 64px;
+  margin: 0;
+}
+
+.wizon-story__metric-label {
+  color: var(--wizon-body);
+  font-size: 16px;
+  line-height: 24px;
+  margin: 4px 0 0;
+}
+
+.wizon-story__meta-primary {
+  color: var(--wizon-red);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+}
+
+.wizon-story__meta-secondary {
+  color: var(--wizon-muted);
+  font-size: 15px;
+  line-height: 22px;
+  margin: 8px 0 0;
+}
+
+.wizon-story__stack {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.wizon-story__stack-label {
+  color: var(--wizon-blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.78px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.wizon-story__stack-items {
+  display: flex;
+  flex: 1 1 220px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wizon-story__stack-items li {
+  color: var(--wizon-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.wizon-story__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 48px;
+  margin: 0;
+}
+
+.wizon-story__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.wizon-story__detail {
+  border-bottom: 1px solid var(--wizon-border);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 144px minmax(0, 1fr);
+  padding-block: 16px;
+}
+
+.wizon-story__detail-label,
+.wizon-story__quote-label {
+  color: var(--wizon-blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.78px;
+  line-height: 16px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wizon-story__detail-body {
+  color: var(--wizon-body);
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.wizon-story__detail-body a {
+  color: var(--wizon-blue);
+}
+
+.wizon-story__quote-panel {
+  background: var(--wizon-subtle);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.wizon-story__quote {
+  border: 0;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.wizon-story__quote-text {
+  color: var(--wizon-ink);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  margin: 0;
+}
+
+.wizon-story__quote cite {
+  color: var(--wizon-body);
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 12px;
+}
+
+.wizon-stories-query__pagination {
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.wizon-stories-query__pagination a,
+.wizon-stories-query__pagination .page-numbers {
+  align-items: center;
+  border: 1px solid var(--wizon-border);
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+/* Official partners */
+.wizon-partners {
+  background: var(--wizon-subtle);
+  padding-block: 96px;
+}
+
+.wizon-partners__inner,
+.wizon-partners__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.wizon-partners__inner {
+  gap: 32px;
+}
+
+.wizon-partners__list {
+  gap: 24px;
+}
+
+/* Gutenberg's default block flow adds margins on top of the designed flex and
+ * grid gaps. Keep the authored 32/24px rhythm from the approved layouts. */
+.wizon-partners__inner > *,
+.wizon-partners__list > *,
+.wizon-partner > * {
+  margin-block-start: 0;
+}
+
+.wizon-partner {
+  align-items: start;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 220px minmax(0, 628px) minmax(280px, 320px);
+  padding: 32px 32px 32px 0;
+}
+
+.wizon-partner__logo-stage {
+  align-items: center;
+  display: flex;
+  height: 136px;
+  justify-content: flex-start;
+}
+
+.wizon-partner__logo {
+  height: 72px;
+  margin: 0;
+  width: 180px;
+}
+
+.wizon-partner__logo img {
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  width: 100%;
+}
+
+.wizon-partner__narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wizon-partner__narrative > p,
+.wizon-partner__benefits-list,
+.wizon-partner__benefits-list li {
+  color: var(--wizon-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.wizon-partner__narrative > p,
+.wizon-partner__benefits-list {
+  margin: 0;
+}
+
+.wizon-partner__link a {
+  color: var(--wizon-red);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.wizon-partner__benefits {
+  background: var(--wizon-subtle);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.wizon-partner__benefits-label {
+  color: var(--wizon-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 16px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+.wizon-partner__benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.wizon-partner__benefits-list li + li {
+  margin-top: 12px;
+}
+
+/* Technology competencies */
+.wizon-competencies {
+  background: var(--wizon-subtle);
+  padding-block: 96px;
+}
+
+.wizon-competencies__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.wizon-competencies__header {
+  align-items: start;
+  display: grid;
+  gap: 64px;
+  grid-template-columns: minmax(0, 700px) minmax(0, 532px);
+}
+
+.wizon-competencies__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wizon-competencies__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 48px;
+  margin: 0;
+}
+
+.wizon-competencies__context,
+.wizon-competencies__credibility {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  padding: 24px 24px 24px 47px;
+  position: relative;
+}
+
+.wizon-competencies__context::before,
+.wizon-competencies__credibility::before {
+  background: var(--wizon-blue);
+  content: "";
+  left: 24px;
+  position: absolute;
+  top: 24px;
+  width: 3px;
+}
+
+.wizon-competencies__context::before {
+  bottom: 24px;
+}
+
+.wizon-competencies__credibility::before {
+  height: 48px;
+}
+
+.wizon-competencies__context p,
+.wizon-competencies__credibility p {
+  margin: 0;
+}
+
+.wizon-competencies__context p {
+  color: var(--wizon-ink);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.wizon-competencies__credibility p {
+  color: var(--wizon-ink);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.wizon-competencies__grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wizon-competencies__inner > *,
+.wizon-competencies__header > *,
+.wizon-competencies__grid > * {
+  margin-block-start: 0;
+}
+
+.wizon-competency-card {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 220px;
+  padding: 31px 32px;
+}
+
+.wizon-competency-card__accent {
+  background: var(--wizon-blue);
+  height: 2px;
+  width: 48px;
+}
+
+.wizon-competency-card__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+  min-height: 60px;
+}
+
+@media (min-width: 1101px) {
+  .wizon-competency-card:nth-child(n + 4) .wizon-competency-card__title {
+    min-height: auto;
+  }
+}
+
+.wizon-competency-card__list {
+  background: var(--wizon-subtle);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: auto 0 0;
+  padding: 16px;
+}
+
+.wizon-competency-card__list li {
+  color: var(--wizon-ink);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+/* Technology selection approach */
+.wizon-tech-approach {
+  background: var(--wizon-white);
+  padding-block: 96px;
+}
+
+.wizon-tech-approach__inner {
+  align-items: start;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: minmax(0, 416px) minmax(0, 832px);
+}
+
+.wizon-tech-approach__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wizon-tech-approach__responsive-visual {
+  display: none;
+  margin: 0;
+  width: 100%;
+}
+
+.wizon-tech-approach__responsive-visual img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.wizon-tech-approach__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 56px;
+  margin: 0;
+}
+
+.wizon-tech-approach__body,
+.wizon-tech-approach__principle p {
+  color: var(--wizon-body);
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.wizon-tech-approach__principles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wizon-tech-approach__principle {
+  background: var(--wizon-subtle);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+/* Page-level consultation call to action */
+.wizon-page-cta {
+  background: var(--wizon-white);
+  padding-block: 96px;
+}
+
+.wizon-page-cta__inner {
+  align-items: center;
+  display: grid;
+  gap: 64px;
+  grid-template-columns: minmax(0, 704px) minmax(0, 528px);
+}
+
+.wizon-page-cta__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wizon-page-cta__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 48px;
+  margin: 0;
+}
+
+.wizon-page-cta__body {
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  margin: 0;
+  max-width: 704px;
+}
+
+.wizon-page-cta__actions {
+  margin-top: 8px;
+}
+
+.wizon-page-contact {
+  margin: 0;
+}
+
+.wizon-story-single {
+  background: var(--wizon-subtle);
+  padding-block: 96px;
+}
+
+.wizon-story-single__title {
+  font-family: "Lora", serif;
+  font-size: clamp(42px, 4vw, 64px);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0 0 48px;
+}
+
+.single-wizon_story .wizon-story__title {
+  display: none;
+}
+
+.wizon-editorial-page a:focus-visible,
+.wizon-story-single a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--wizon-blue), transparent 55%);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .wizon-page-hero__inner,
+  .wizon-page-hero--stories .wizon-page-hero__inner,
+  .wizon-page-cta__inner,
+  .wizon-tech-approach__inner,
+  .wizon-competencies__header {
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-page-hero--stories .wizon-page-hero__inner {
+    gap: 32px;
+  }
+
+  .wizon-page-hero--technologies .wizon-page-hero__artwork {
+    align-self: flex-end;
+    display: block;
+    height: 160px;
+    width: 160px;
+  }
+
+  .wizon-tech-approach__responsive-visual:not(.wizon-tech-approach__responsive-visual--mobile) {
+    display: block;
+  }
+
+  .wizon-tech-approach__principles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wizon-page-proof {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wizon-page-proof::before,
+  .wizon-page-proof__label {
+    grid-column: 1 / -1;
+  }
+
+  .wizon-page-proof__row {
+    border-bottom: 0;
+    border-top: 0;
+    padding-right: 20px;
+  }
+
+  .wizon-page-proof__row + .wizon-page-proof__row {
+    border-left: 1px solid var(--wizon-border-soft);
+    padding-left: 20px;
+    padding-right: 0;
+  }
+
+  .wizon-page-proof__value-row {
+    align-items: start;
+    gap: 2px;
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-story__layout {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+
+  .wizon-story__logo,
+  .wizon-story__logo-stage {
+    width: 100%;
+  }
+
+  .wizon-partner {
+    grid-template-columns: 180px minmax(0, 1fr);
+    padding-right: 0;
+  }
+
+  .wizon-partner__benefits {
+    grid-column: 2;
+  }
+
+  .wizon-competencies__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wizon-tech-approach__inner,
+  .wizon-page-cta__inner {
+    gap: 48px;
+  }
+
+  .wizon-page-contact {
+    gap: 20px;
+    grid-template-columns: 172px minmax(0, 1fr);
+    max-width: 560px;
+    min-height: 220px;
+    padding: 24px;
+    width: 100%;
+  }
+
+  .wizon-page-contact .wizon-page-contact__portrait,
+  .wizon-page-contact .wizon-page-contact__portrait img {
+    height: 172px;
+    width: 172px;
+  }
+}
+
+@media (max-width: 860px) {
+  .wizon-story__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-story__aside {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wizon-story__logo-stage {
+    grid-column: 1 / -1;
+  }
+
+  .wizon-story__proof {
+    display: contents;
+  }
+
+  .wizon-story__stack {
+    grid-column: 1 / -1;
+  }
+
+  .wizon-partner {
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-partner__benefits {
+    grid-column: auto;
+  }
+
+  .wizon-partner__logo-stage {
+    height: 92px;
+  }
+}
+
+@media (max-width: 782px) {
+  .wizon-page-hero,
+  .wizon-stories-section,
+  .wizon-partners,
+  .wizon-competencies,
+  .wizon-tech-approach,
+  .wizon-page-cta,
+  .wizon-story-single {
+    padding-block: 72px;
+  }
+
+  .wizon-page-hero--stories {
+    padding-block: 56px;
+  }
+
+  .wizon-page-hero__inner {
+    gap: 40px;
+  }
+
+  .wizon-page-hero__title {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .wizon-page-hero--technologies .wizon-page-hero__inner {
+    gap: 32px;
+  }
+
+  .wizon-page-hero--technologies .wizon-page-hero__title {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .wizon-page-hero--stories .wizon-page-hero__title {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .wizon-story-list,
+  .wp-block-post-template.wizon-story-list {
+    gap: 32px;
+  }
+
+  .wizon-story {
+    padding: 28px;
+  }
+
+  .wizon-story__title,
+  .wizon-competencies__title {
+    font-size: 34px;
+    line-height: 41px;
+  }
+
+  .wizon-story__detail {
+    gap: 8px;
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-partners__inner,
+  .wizon-competencies__inner {
+    gap: 28px;
+  }
+
+  /*
+   * Gutenberg's flow layout adds a 24px block margin to these children.
+   * The component already owns its responsive spacing through flex/grid gaps,
+   * so retaining both doubles the gaps and offsets alternate grid cards.
+   */
+  .wizon-competencies__inner > *,
+  .wizon-competencies__header > *,
+  .wizon-competencies__grid > * {
+    margin-block-start: 0;
+  }
+
+  .wizon-competencies__header {
+    gap: 32px;
+  }
+
+  .wizon-partner {
+    padding-block: 24px;
+  }
+
+  .wizon-competencies__grid {
+    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wizon-competency-card {
+    padding: 24px;
+  }
+
+  .wizon-tech-approach__title {
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  .wizon-page-cta__title {
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wizon-page-hero--stories {
+    padding-block: 48px;
+  }
+
+  .wizon-page-hero--stories .wizon-page-hero__inner {
+    gap: 28px;
+  }
+
+  .wizon-competency-card__title {
+    min-height: 0;
+  }
+
+  .wizon-competencies {
+    padding-bottom: 48px;
+  }
+
+  .wizon-competency-card {
+    min-height: 200px;
+  }
+
+  .wizon-page-hero__title {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .wizon-page-hero__lead,
+  .wizon-page-cta__body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .wizon-story__aside {
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-story__logo-stage {
+    grid-column: auto;
+  }
+
+  .wizon-story__proof {
+    display: flex;
+  }
+
+  .wizon-story__stack {
+    grid-column: auto;
+  }
+
+  .wizon-page-hero--technologies .wizon-page-hero__inner {
+    gap: 24px;
+  }
+
+  .wizon-page-hero--technologies .wizon-page-hero__artwork {
+    height: 112px;
+    width: 112px;
+  }
+
+  .wizon-page-hero--technologies .wizon-page-hero__title {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .wizon-page-hero--stories .wizon-page-hero__title {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .wizon-competencies__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-tech-approach__responsive-visual:not(.wizon-tech-approach__responsive-visual--mobile) {
+    display: none;
+  }
+
+  .wizon-tech-approach__responsive-visual--mobile {
+    display: block;
+  }
+
+  .wizon-tech-approach__principles {
+    display: flex;
+  }
+
+  .wizon-story {
+    padding: 16px;
+  }
+
+  .wizon-story__logo-stage {
+    height: 120px;
+  }
+
+  .wizon-story__metric,
+  .wizon-story__meta-panel,
+  .wizon-story__quote-panel,
+  .wizon-partner__benefits,
+  .wizon-competency-card,
+  .wizon-tech-approach__principle {
+    padding: 20px;
+  }
+
+  .wizon-story__metric,
+  .wizon-story__meta-panel,
+  .wizon-story__quote-panel {
+    padding: 16px;
+  }
+
+  .wizon-story__title,
+  .wizon-competencies__title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .wizon-story__metric-value {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .wizon-competencies__context,
+  .wizon-competencies__credibility {
+    padding: 20px 20px 20px 39px;
+  }
+
+  .wizon-competencies__context::before,
+  .wizon-competencies__credibility::before {
+    left: 20px;
+    top: 20px;
+  }
+
+  .wizon-competencies__context::before {
+    bottom: 20px;
+  }
+
+  .wizon-tech-approach__title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .wizon-page-cta__inner {
+    gap: 32px;
+  }
+
+  .wizon-page-cta__actions,
+  .wizon-page-cta__button {
+    width: fit-content;
+  }
+
+  .wizon-page-cta__button .wp-block-button__link {
+    width: auto;
+  }
+
+  .wizon-page-contact {
+    align-items: center;
+    gap: 16px;
+    grid-template-columns: 124px minmax(0, 1fr);
+    min-height: 216px;
+    padding: 18px;
+  }
+
+  .wizon-page-contact .wizon-page-contact__portrait,
+  .wizon-page-contact .wizon-page-contact__portrait img {
+    height: 180px;
+    width: 124px;
+  }
+}
+
+@media (max-width: 460px) {
+  .wizon-competency-card__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

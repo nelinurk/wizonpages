@@ -1,0 +1,19 @@
+/* Keep the announcement and CTA together, centred inside the approved pill. */
+.wizon-event .wizon-event__inner {
+	justify-content: center;
+}
+
+.wizon-event .wizon-event__message {
+	min-width: 0;
+}
+
+.wizon-event .wizon-event__mobile-link {
+	overflow-wrap: anywhere;
+}
+
+/* Do not let a long mobile heading squeeze the dialog's close target. */
+.wizon-consent .wizon-consent__close {
+	flex: 0 0 44px;
+	width: 44px;
+	height: 44px;
+}

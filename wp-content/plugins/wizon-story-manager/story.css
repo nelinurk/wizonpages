@@ -1,0 +1,18 @@
+/* Single case studies: one mobile gutter and readable long titles. */
+@media (max-width: 640px) {
+    body.single-wizon_story .wizon-story-single {
+        padding-block: 40px;
+    }
+    body.single-wizon_story .wizon-story-single > .wizon-story-single__inner {
+        margin-inline: 0;
+        width: 100%;
+        max-width: none;
+    }
+    body.single-wizon_story .wizon-story-single__title.wp-block-post-title {
+        font-size: clamp(28px, 8.2vw, 34px);
+        line-height: 1.15;
+        margin-bottom: 24px;
+        word-break: normal;
+        overflow-wrap: anywhere;
+    }
+}

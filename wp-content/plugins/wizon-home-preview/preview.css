@@ -1,0 +1,124 @@
+/* All rules belong exclusively to the isolated, editable homepage experiment. */
+/* Reuse the editable hero image already saved on the preview page. */
+.wizon-home-experiment .wizon-hero__inner {
+ display: grid;
+ grid-template-columns: minmax(0, 1.9fr) minmax(220px, .9fr);
+ column-gap: clamp(32px, 5vw, 72px);
+ row-gap: 22px;
+ align-items: start;
+}
+.wizon-home-experiment .wizon-hero__narrative,
+.wizon-home-experiment .wizon-hero__aside { display: contents; }
+.wizon-home-experiment .wizon-hero__inner > *,
+.wizon-home-experiment .wizon-hero__copy,
+.wizon-home-experiment .wizon-hero__actions { min-width: 0; }
+.wizon-home-experiment .wizon-hero__eyebrow { grid-column: 1; grid-row: 1; margin: 0; }
+.wizon-home-experiment .wizon-hero__title {
+ grid-column: 1; grid-row: 2; max-width: none; margin: 0;
+ font-size: clamp(36px, 3.6vw, 52px); line-height: 1.14;
+}
+.wizon-home-experiment .wizon-hero__copy { grid-column: 1; grid-row: 3; max-width: none; margin: 0; }
+.wizon-home-experiment .wizon-hero__actions { grid-column: 1; grid-row: 4; justify-content: flex-start; margin: 2px 0 0; }
+.wizon-home-experiment .wizon-hero__art {
+ display: block; grid-column: 2; grid-row: 1 / span 4;
+ justify-self: center; align-self: center;
+ width: min(100%, 280px); height: auto; aspect-ratio: 1; margin: 0;
+}
+.wizon-home-experiment .wizon-hero__art img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; }
+.wizon-hero-experiment .wizon-page-hero__art img,
+.wizon-hero-experiment .wizon-page-hero__artwork img { width: min(100%, 240px); height: auto; aspect-ratio: 1; object-fit: contain; }
+.wizon-home-experiment .wizon-preview-local-ref { display: contents; }
+.wizon-home-experiment .wizon-services { padding-block: 64px; position: relative; isolation: isolate; }
+/* One gentle transition, using the existing white/subtle palette. */
+.wizon-home-experiment .wizon-services::before { content: ''; position: absolute; inset: -30px 0 auto; height: 32px; background: #f7f7f7; clip-path: ellipse(65% 100% at 55% 100%); pointer-events: none; }
+.wizon-home-experiment .wizon-services__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 40px; }
+.wizon-home-experiment .wizon-services__header { grid-column: 1; max-width: 790px; }
+.wizon-home-experiment .wizon-services__footer { grid-column: 2; grid-row: 1; align-self: end; margin: 0 0 4px; }
+.wizon-home-experiment .wizon-services__grid { grid-column: 1 / -1; gap: 20px; margin-top: 30px; }
+.wizon-home-experiment .wizon-services__card { min-height: 0; padding: 26px 28px 28px; border: 1px solid #e3e3e3; border-radius: 18px; position: relative; overflow: hidden; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.wizon-home-experiment .wizon-services__card::after { content: ''; position: absolute; inset: auto 18px 0; height: 3px; border-radius: 3px 3px 0 0; background: #0076c8; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; pointer-events: none; }
+.wizon-home-experiment .wizon-services__card:hover,
+.wizon-home-experiment .wizon-services__card:focus-within { transform: translateY(-3px); border-color: #b9d7ed; box-shadow: 0 10px 24px rgb(17 17 17 / 6%); }
+.wizon-home-experiment .wizon-services__card:hover::after,
+.wizon-home-experiment .wizon-services__card:focus-within::after { transform: scaleX(1); }
+.wizon-home-experiment .wizon-preview-service-icon { margin: 0 0 16px; width: 52px; height: 52px; }
+.wizon-home-experiment .wizon-preview-service-icon img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .3s ease; }
+.wizon-home-experiment .wizon-services__card:hover .wizon-preview-service-icon img { transform: translateY(-3px) rotate(-3deg); }
+.wizon-home-experiment .wizon-preview-service-icon.is-introduced { animation: wizon-preview-icon-enter .9s ease both; }
+@keyframes wizon-preview-icon-enter { 0% { transform: translateY(6px); } 55% { transform: translateY(-3px); } 100% { transform: translateY(0); } }
+.wizon-home-experiment .wizon-services__card-title { max-width: 590px; font-size: 27px; line-height: 1.25; }
+.wizon-home-experiment .wizon-services__card-body { max-width: 62ch; line-height: 1.6; margin-top: 14px; }
+.wizon-home-experiment .wizon-services__button .wp-block-button__link { background: #c71931; border: 2px solid #c71931; color: white; padding: 17px 23px; font-weight: 700; border-radius: 6px; text-decoration: none; box-shadow: 0 4px 12px rgb(199 25 49 / 12%); transition: background .2s ease, transform .2s ease; }
+.wizon-home-experiment .wizon-services__button .wp-block-button__link:hover { background: #a91429; border-color: #a91429; transform: translateY(-2px); }
+.wizon-home-experiment .wizon-services__button .wp-block-button__link:focus-visible,
+.wizon-home-experiment .wizon-preview-slider button:focus-visible { outline: 3px solid #0076c8; outline-offset: 4px; }
+.wizon-home-experiment .wizon-approach { padding-block: 72px; }
+.wizon-home-experiment .wizon-references { padding-block: 64px; }
+.wizon-home-experiment .wizon-references__card { min-height: 0; }
+.wizon-home-experiment .wizon-references__card .wizon-story-card__meta { padding-top: 22px; }
+.wizon-home-experiment .wizon-testimonials { padding-block: 64px; }
+.wizon-home-experiment .wizon-testimonials__inner { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.65fr); gap: 56px; align-items: start; }
+.wizon-home-experiment .wizon-testimonials__header { position: static; padding-top: 14px; }
+.wizon-home-experiment .wizon-testimonials__grid { min-width: 0; background: transparent; gap: 24px; }
+.wizon-home-experiment .wizon-testimonials__card { margin: 0; padding: 32px 36px; border: 1px solid #e7e7e7; border-radius: 22px; box-shadow: 0 8px 22px rgb(0 0 0 / 3%); }
+.wizon-home-experiment .wizon-testimonials__quote { font-size: clamp(20px, 1.65vw, 25px); line-height: 1.5; gap: 18px; }
+.wizon-home-experiment .wizon-testimonials__quote p { margin: 0; }
+.wizon-home-experiment .wizon-testimonials__person { margin-top: 24px; }
+.wizon-home-experiment .wizon-testimonials__card[hidden] { display: none !important; }
+.wizon-home-experiment .wizon-preview-slider { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; }
+.wizon-home-experiment .wizon-preview-slider__arrows { display: flex; gap: 10px; }
+.wizon-home-experiment .wizon-preview-slider button { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; padding: 0; border: 1px solid #c9c9c9; border-radius: 50%; color: #161616; background: #fff; cursor: pointer; }
+.wizon-home-experiment .wizon-preview-slider button:hover { border-color: #c71931; color: #c71931; }
+.wizon-home-experiment .wizon-preview-slider svg { width: 21px; height: 21px; }
+.wizon-home-experiment .wizon-preview-slider__status { font-size: 14px; color: #575757; font-weight: 600; }
+.wizon-home-experiment .wizon-preview-slider__dots { display: flex; gap: 0; }
+.wizon-home-experiment .wizon-preview-slider__dots button { width: 44px; height: 44px; border: none; background: transparent; }
+.wizon-home-experiment .wizon-preview-slider__dots button::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #b9b9b9; }
+.wizon-home-experiment .wizon-preview-slider__dots button[aria-current="true"]::before { width: 23px; border-radius: 5px; background: #c71931; }
+/* Keep the final CTA clean; the client requested removal of the watermark. */
+.wizon-home-experiment .wizon-final-cta { padding-block: 72px; position: relative; isolation: isolate; }
+@media (max-width: 1100px) {
+ .wizon-home-experiment .wizon-services__inner { grid-template-columns: 1fr; }
+ .wizon-home-experiment .wizon-services__footer { grid-column: 1; grid-row: 2; margin-top: 24px; }
+ .wizon-home-experiment .wizon-services__grid { grid-row: 3; }
+ .wizon-home-experiment .wizon-testimonials__inner { grid-template-columns: minmax(180px, .7fr) minmax(0, 1.5fr); gap: 30px; }
+}
+@media (max-width: 900px) {
+ .wizon-home-experiment .wizon-hero__inner { grid-template-columns: minmax(0, 1fr); row-gap: 20px; }
+ .wizon-home-experiment .wizon-hero__title { font-size: clamp(32px, 7vw, 40px); }
+ .wizon-home-experiment .wizon-hero__art { grid-column: 1; grid-row: 3; width: 140px; justify-self: start; }
+ .wizon-home-experiment .wizon-hero__copy { grid-row: 4; }
+ .wizon-home-experiment .wizon-hero__actions { grid-row: 5; }
+}
+@media (max-width: 767px) {
+ .wizon-home-experiment .wizon-services,
+ .wizon-home-experiment .wizon-testimonials,
+ .wizon-home-experiment .wizon-approach,
+ .wizon-home-experiment .wizon-references,
+ .wizon-home-experiment .wizon-final-cta { padding-block: 48px; }
+ .wizon-home-experiment .wizon-services__grid { grid-template-columns: 1fr; gap: 16px; margin-top: 28px; }
+ .wizon-home-experiment .wizon-services__card { padding: 24px; border-radius: 18px; }
+ .wizon-home-experiment .wizon-preview-service-icon { width: 52px; height: 52px; margin-bottom: 18px; }
+ .wizon-home-experiment .wizon-services__card-title { font-size: 25px; }
+ .wizon-home-experiment .wizon-services__button,
+ .wizon-home-experiment .wizon-services__button .wp-block-button__link { width: 100%; }
+ .wizon-home-experiment .wizon-services__footer .wp-block-buttons { width: 100%; }
+ .wizon-home-experiment .wizon-services__button .wp-block-button__link { text-align: center; box-sizing: border-box; }
+ .wizon-home-experiment .wizon-testimonials__inner { grid-template-columns: 1fr; gap: 24px; }
+ .wizon-home-experiment .wizon-testimonials__header { padding-top: 0; }
+ .wizon-home-experiment .wizon-preview-testimonial-stage { display: flex; flex-direction: column; }
+ .wizon-home-experiment .wizon-testimonials__card { padding: 24px; border-radius: 18px; }
+ .wizon-home-experiment .wizon-testimonials__quote { font-size: 20px; line-height: 1.45; }
+ .wizon-home-experiment .wizon-preview-slider { order: -1; gap: 8px; margin: 0 0 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .wizon-home-experiment .wizon-services__card,
+ .wizon-home-experiment .wizon-services__card::after,
+ .wizon-home-experiment .wizon-preview-service-icon img,
+ .wizon-home-experiment .wizon-services__button .wp-block-button__link { transition: none; transform: none; }
+ .wizon-home-experiment .wizon-preview-service-icon.is-introduced { animation: none; }
+ .wizon-home-experiment .wizon-services__card:hover,
+ .wizon-home-experiment .wizon-services__card:focus-within,
+ .wizon-home-experiment .wizon-services__card:hover .wizon-preview-service-icon img,
+ .wizon-home-experiment .wizon-services__button .wp-block-button__link:hover { transform: none; }
+}

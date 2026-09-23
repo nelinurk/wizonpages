@@ -1,0 +1,1023 @@
+/* Services and Contact pages
+ * Figma source: IKyxlzVIhWQ5JfJhqqOqxJ
+ * Services: 338:278, 338:479, 338:680, 338:865, 338:1050, 338:1235
+ * Contact: 348:253, 348:320, 348:400, 348:454, 348:521, 348:575
+ */
+
+.wizon-services-page,
+.wizon-contact-page,
+.wizon-services-page > *,
+.wizon-contact-page > * {
+  margin-block: 0;
+}
+
+.wizon-services-page .wizon-page-hero__inner > *,
+.wizon-services-page .wizon-page-hero__copy > *,
+.wizon-service-nav__inner > *,
+.wizon-service-nav__card > *,
+.wizon-service-detail__inner > *,
+.wizon-service-detail__top > *,
+.wizon-service-detail__intro > *,
+.wizon-service-detail__outcomes > *,
+.wizon-service-detail__outcome > *,
+.wizon-service-detail__offerings > *,
+.wizon-service-detail__offering > *,
+.wizon-services-consultation__inner > *,
+.wizon-services-consultation__copy > *,
+.wizon-services-consultation__person > *,
+.wizon-services-consultation__person-copy > * {
+  margin-block-start: 0;
+}
+
+.wizon-services-page .wizon-page-hero,
+.wizon-contact-page .wizon-page-hero {
+  background: var(--wizon-white);
+  padding-block: 96px;
+}
+
+.wizon-services-page .wizon-page-hero__inner,
+.wizon-contact-page .wizon-page-hero__inner {
+  align-items: center;
+  display: grid;
+  gap: 48px;
+  grid-template-columns: minmax(0, 820px) 270px;
+  justify-content: start;
+}
+
+.wizon-services-page .wizon-page-hero__copy,
+.wizon-contact-page .wizon-page-hero__copy {
+  margin: 0;
+  max-width: 820px;
+}
+
+.wizon-services-page .wizon-page-hero__eyebrow,
+.wizon-contact-page .wizon-page-hero__eyebrow {
+  color: var(--wizon-red);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  margin: 0 0 28px;
+  text-transform: uppercase;
+}
+
+.wizon-services-page .wizon-page-hero__title,
+.wizon-contact-page .wizon-page-hero__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: clamp(48px, 4.45vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.wizon-services-page .wizon-page-hero__body,
+.wizon-contact-page .wizon-page-hero__body {
+  color: var(--wizon-body);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 26px;
+  margin: 24px 0 0;
+  max-width: 820px;
+}
+
+.wizon-services-page .wizon-page-hero__art,
+.wizon-contact-page .wizon-page-hero__art {
+  height: 270px;
+  margin: 0;
+  width: 270px;
+}
+
+.wizon-services-page .wizon-page-hero__art img,
+.wizon-contact-page .wizon-page-hero__art img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+/* Services jump navigation */
+.wizon-service-nav {
+  background: var(--wizon-subtle);
+  padding-block: 96px;
+}
+
+.wizon-service-nav__inner {
+  display: grid !important;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.wizon-service-nav__card {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  min-height: 190px;
+  padding: 20px;
+}
+
+.wizon-service-nav__accent,
+.wizon-service-detail__accent,
+.wizon-contact-details__accent {
+  background: var(--wizon-blue);
+  border: 0;
+  height: 2px;
+  margin: 0 !important;
+  max-width: 48px !important;
+  opacity: 1;
+  width: 48px !important;
+}
+
+.wizon-service-nav__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 34px;
+  margin: 12px 0 0;
+}
+
+.wizon-service-nav__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wizon-service-nav__title a:hover,
+.wizon-service-nav__title a:focus-visible {
+  color: var(--wizon-red);
+}
+
+.wizon-service-nav__prompt {
+  align-self: end;
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  margin: 0;
+  padding: 20px;
+}
+
+.wizon-service-nav__prompt a {
+  color: var(--wizon-red);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Service details */
+.wizon-service-detail {
+  background: var(--wizon-white);
+  padding-block: 96px;
+  scroll-margin-top: 96px;
+}
+
+.wizon-service-detail--subtle {
+  background: var(--wizon-subtle);
+}
+
+.wizon-service-detail--audit {
+  padding-bottom: 96px;
+}
+
+.wizon-service-detail__top {
+  display: grid;
+  gap: 80px;
+  grid-template-columns: 328px minmax(0, 1fr);
+}
+
+.wizon-service-detail__intro {
+  margin: 0;
+}
+
+.wizon-service-detail__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+  margin: 27px 0 0;
+}
+
+.wizon-service-detail__lead {
+  color: var(--wizon-body);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 26px;
+  margin: 25px 0 0;
+}
+
+.wizon-service-detail__actions {
+  margin: 26px 0 0;
+}
+
+.wizon-service-detail__actions .wp-block-button__link {
+  min-height: 52px;
+}
+
+.wizon-service-detail__outcomes {
+  display: grid !important;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.wizon-service-detail__outcome {
+  background: var(--wizon-subtle);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  min-height: 336px;
+  padding: 24px;
+}
+
+.wizon-service-detail--subtle .wizon-service-detail__outcome {
+  background: var(--wizon-white);
+}
+
+.wizon-service-detail__label,
+.wizon-service-detail__offering-label {
+  color: var(--wizon-blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 16px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wizon-service-detail__outcome > p:not(.wizon-service-detail__label) {
+  color: var(--wizon-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 18px 0 0;
+}
+
+.wizon-service-detail__offerings {
+  display: grid !important;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  margin-top: 52px;
+}
+
+.wizon-service-detail__offering {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  min-height: 247px;
+  padding: 31px;
+}
+
+.wizon-service-detail__offering-label {
+  color: var(--wizon-red);
+}
+
+.wizon-service-detail__offering-title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 31px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 17px 0 0;
+}
+
+.wizon-service-detail__offering > p:not(.wizon-service-detail__offering-label) {
+  color: var(--wizon-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 14px 0 0;
+}
+
+/* Services consultation */
+.wizon-services-consultation {
+  background: var(--wizon-white);
+  padding-block: 84px 96px;
+}
+
+.wizon-services-consultation__inner {
+  align-items: center;
+  display: grid;
+  gap: 80px;
+  grid-template-columns: minmax(0, 688px) minmax(0, 528px);
+}
+
+.wizon-services-consultation__copy {
+  margin: 0;
+}
+
+.wizon-services-consultation__title {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 680px;
+}
+
+.wizon-services-consultation__body {
+  color: var(--wizon-body);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 26px;
+  margin: 16px 0 0;
+}
+
+.wizon-services-consultation__copy .wp-block-buttons {
+  margin-top: 18px;
+}
+
+.wizon-services-consultation__copy .wp-block-button__link {
+  justify-content: center;
+  min-width: 228px;
+}
+
+.wizon-services-consultation__person {
+  align-items: center;
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(19, 19, 19, 0.11);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 172px minmax(0, 1fr);
+  min-height: 220px;
+  padding: 23px;
+}
+
+.wizon-services-consultation__portrait {
+  height: 172px;
+  margin: 0;
+  width: 172px;
+}
+
+.wizon-services-consultation__portrait img {
+  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.wizon-services-consultation__person-copy {
+  margin: 0;
+}
+
+.wizon-services-consultation__role {
+  color: var(--wizon-red);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wizon-services-consultation__name {
+  color: var(--wizon-ink);
+  font-family: "Lora", serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 7px 0 0;
+}
+
+.wizon-services-consultation__person-body,
+.wizon-services-consultation__contact {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 7px 0 0;
+}
+
+.wizon-services-consultation__person-body {
+  color: var(--wizon-muted);
+}
+
+.wizon-services-consultation__contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wizon-services-consultation__contact a[href^="mailto:"] {
+  color: var(--wizon-red);
+}
+
+/* Contact form and details */
+.wizon-contact-content {
+  background: var(--wizon-subtle);
+  padding-block: 96px;
+}
+
+.wizon-contact-content__inner {
+  align-items: start;
+  display: grid;
+  gap: 64px;
+  grid-template-columns: minmax(0, 808px) minmax(0, 424px);
+}
+
+.wizon-contact-form-slot {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  min-height: 652px;
+  padding: 31px;
+}
+
+.wizon-contact-form-slot__shortcode {
+	display: block;
+	margin-bottom: 24px;
+}
+
+.editor-styles-wrapper .wizon-contact-form-slot__shortcode {
+  background: color-mix(in srgb, var(--wizon-blue), transparent 92%);
+  border: 1px dashed var(--wizon-blue);
+  border-radius: 4px;
+  color: var(--wizon-ink);
+  display: block;
+  font-family: monospace;
+  font-size: 13px;
+  margin: 0 0 16px;
+  padding: 8px 12px;
+}
+
+.wizon-contact-form-slot.is-connected .wizon-contact-form-slot__shortcode {
+  display: block;
+}
+
+.wizon-contact-form-slot.is-connected .wizon-contact-form-fallback {
+	display: none;
+}
+
+.wizon-contact-form-slot:has(.wizon-form-slot-output.is-connected) .wizon-contact-form-fallback {
+	display: none;
+}
+
+.wizon-contact-form-slot:has(.wizon-form-slot-output.is-placeholder) {
+	min-height: 0;
+}
+
+.wizon-contact-form-slot:has(.wizon-form-slot-output.is-placeholder) .wizon-contact-form-fallback {
+	display: none;
+}
+
+.editor-styles-wrapper .wizon-contact-form-slot:has(.wizon-form-slot-output.is-placeholder) {
+	min-height: 652px;
+}
+
+.editor-styles-wrapper .wizon-contact-form-slot:has(.wizon-form-slot-output.is-placeholder) .wizon-contact-form-fallback {
+	display: block;
+}
+
+.wizon-contact-form-slot .wizon-form-slot-output.is-placeholder .wizon-form-slot {
+	background: color-mix(in srgb, var(--wizon-blue), transparent 94%);
+	border: 1px solid color-mix(in srgb, var(--wizon-blue), transparent 55%);
+	border-radius: 8px;
+	padding: 16px 18px;
+}
+
+.wizon-contact-form-fallback__grid {
+  display: grid !important;
+  gap: 20px 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.wizon-contact-form-fallback__field {
+  margin: 0;
+}
+
+.wizon-contact-form-fallback__field--full {
+  grid-column: 1 / -1;
+}
+
+.wizon-contact-form-fallback__label,
+.wizon-contact-form-slot label {
+  color: var(--wizon-ink);
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.wizon-contact-form-fallback__control,
+.wizon-contact-form-slot input:not([type="checkbox"]):not([type="radio"]),
+.wizon-contact-form-slot select,
+.wizon-contact-form-slot textarea {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 8px;
+  color: var(--wizon-ink);
+  font: inherit;
+  min-height: 52px;
+  margin: 0;
+  padding: 13px 15px;
+  width: 100%;
+}
+
+.wizon-contact-form-fallback__control--message,
+.wizon-contact-form-slot textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.wizon-contact-form-fallback__control--select {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wizon-contact-form-fallback__control--select::after {
+  content: "⌄";
+  font-size: 16px;
+  line-height: 1;
+}
+
+.wizon-contact-form-fallback__control--select p {
+  margin: 0;
+}
+
+.wizon-contact-form-fallback__consent {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  margin: 23px 0 0;
+}
+
+.wizon-contact-form-fallback__checkbox {
+  border: 1px solid var(--wizon-ink);
+  border-radius: 4px;
+  flex: 0 0 24px;
+  height: 24px;
+  margin: 0;
+  width: 24px;
+}
+
+.wizon-contact-form-fallback__consent p {
+  color: var(--wizon-ink);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 0;
+}
+
+.wizon-contact-form-fallback__consent a {
+  color: inherit;
+}
+
+.wizon-contact-form-fallback__actions {
+  margin: 23px 0 0;
+  pointer-events: none;
+}
+
+.wizon-contact-form-fallback__actions .wp-block-button__link {
+  justify-content: center;
+  min-width: 228px;
+}
+
+.wizon-contact-details {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(19, 19, 19, 0.1);
+  min-height: 538px;
+  padding: 39px;
+}
+
+.wizon-contact-details__accent {
+  margin-bottom: 18px;
+}
+
+.wizon-contact-details__label {
+  color: var(--wizon-ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  margin: 17px 0 0;
+  text-transform: uppercase;
+}
+
+.wizon-contact-details__line,
+.wizon-contact-details__link,
+.wizon-contact-details__directions {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 14px 0 0;
+}
+
+.wizon-contact-details__line {
+  color: var(--wizon-ink);
+}
+
+.wizon-contact-details__line--muted,
+.wizon-contact-details__directions {
+  color: var(--wizon-muted);
+}
+
+.wizon-contact-details__line a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wizon-contact-details__link a {
+  color: var(--wizon-blue);
+  font-weight: 600;
+}
+
+.wizon-contact-details__directions {
+  margin-top: 14px;
+}
+
+/* Keep service navigation readable before the full desktop layout fits. */
+@media (max-width: 1199px) {
+  .wizon-service-nav__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .wizon-services-page .wizon-page-hero__inner,
+  .wizon-contact-page .wizon-page-hero__inner {
+    grid-template-columns: minmax(0, 1fr) 220px;
+  }
+
+  .wizon-services-page .wizon-page-hero__art,
+  .wizon-contact-page .wizon-page-hero__art {
+    height: 220px;
+    width: 220px;
+  }
+
+  .wizon-service-detail__top {
+    gap: 48px;
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+
+  .wizon-service-detail__outcomes {
+    gap: 16px;
+  }
+
+  .wizon-service-detail__outcome {
+    padding: 20px;
+  }
+
+  .wizon-services-consultation__inner,
+  .wizon-contact-content__inner {
+    gap: 48px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .wizon-services-page .wizon-section__inner,
+  .wizon-contact-page .wizon-section__inner {
+    max-width: 688px;
+    width: calc(100% - 80px);
+  }
+
+  .wizon-service-detail__title {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 24px;
+  }
+
+  .wizon-service-detail__lead {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 24px;
+  }
+
+  .wizon-service-detail__actions {
+    margin-top: 24px;
+  }
+
+  .wizon-service-detail__outcomes {
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .wizon-service-detail__outcome {
+    align-items: start;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 128px minmax(0, 1fr);
+    min-height: 168px;
+    padding: 24px;
+  }
+
+  .wizon-service-detail__outcome > p:not(.wizon-service-detail__label) {
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .wizon-service-detail__offering {
+    min-height: 296px;
+    padding: 28px;
+  }
+
+  .wizon-service-detail__offering-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 12px;
+  }
+
+  .wizon-service-detail__offering > p:not(.wizon-service-detail__offering-label) {
+    font-weight: 400;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .wizon-services-page .wizon-page-hero,
+  .wizon-contact-page .wizon-page-hero {
+    padding-block: 64px;
+  }
+
+  .wizon-services-page .wizon-page-hero__inner,
+  .wizon-contact-page .wizon-page-hero__inner {
+    display: block;
+  }
+
+  .wizon-services-page .wizon-page-hero__art,
+  .wizon-contact-page .wizon-page-hero__art {
+    display: none;
+  }
+
+  .wizon-service-nav {
+    padding-block: 64px;
+  }
+
+  .wizon-service-nav__card {
+    min-height: 190px;
+  }
+
+  .wizon-service-nav__prompt {
+    min-height: 190px;
+  }
+
+  .wizon-service-detail,
+  .wizon-service-detail--audit {
+    padding-block: 64px;
+  }
+
+  .wizon-service-detail__top {
+    display: block;
+  }
+
+  .wizon-service-detail__intro {
+    max-width: 560px;
+  }
+
+  .wizon-service-detail__outcomes {
+    grid-template-columns: 1fr !important;
+    margin-top: 32px;
+  }
+
+  .wizon-service-detail__outcome {
+    min-height: 168px;
+  }
+
+  .wizon-service-detail__offerings {
+    margin-top: 32px;
+  }
+
+  .wizon-services-consultation {
+    padding-block: 64px;
+  }
+
+  .wizon-services-consultation__inner {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-services-consultation__person {
+    max-width: 528px;
+  }
+
+  .wizon-contact-content {
+    padding-block: 64px;
+  }
+
+  .wizon-contact-content__inner {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  .wizon-contact-details {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .wizon-services-page .wizon-page-hero,
+  .wizon-contact-page .wizon-page-hero {
+    padding-block: 48px;
+  }
+
+  .wizon-services-page .wizon-page-hero__eyebrow,
+  .wizon-contact-page .wizon-page-hero__eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .wizon-services-page .wizon-page-hero__title,
+  .wizon-contact-page .wizon-page-hero__title {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .wizon-services-page .wizon-page-hero__body,
+  .wizon-contact-page .wizon-page-hero__body {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 18px;
+  }
+
+  .wizon-service-nav {
+    padding-block: 48px;
+  }
+
+  .wizon-service-nav__inner {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .wizon-service-nav__card {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .wizon-service-nav__title {
+    font-size: 28px;
+    line-height: 34px;
+    margin-top: 12px;
+  }
+
+  .wizon-service-nav__prompt {
+    min-height: 0;
+    padding: 10px 0;
+  }
+
+  .wizon-service-detail,
+  .wizon-service-detail--audit {
+    padding-block: 48px;
+  }
+
+  .wizon-service-detail__title {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 20px;
+  }
+
+  #andmeplatvormid .wizon-service-detail__title,
+  #juhtimisaruandlus .wizon-service-detail__title,
+  #data-platforms .wizon-service-detail__title,
+  #management-reporting .wizon-service-detail__title {
+    font-size: 31px;
+    line-height: 39px;
+  }
+
+  .wizon-service-detail__lead {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 20px;
+  }
+
+  .wizon-service-detail__actions {
+    margin-top: 20px;
+  }
+
+  .wizon-service-detail__actions,
+  .wizon-service-detail__actions .wp-block-button,
+  .wizon-service-detail__actions .wp-block-button__link {
+    width: 100%;
+  }
+
+  .wizon-service-detail__outcomes {
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .wizon-service-detail__outcome {
+    display: block;
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .wizon-service-detail__outcome > p:not(.wizon-service-detail__label) {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 12px;
+  }
+
+  .wizon-service-detail__offerings {
+    gap: 16px;
+    grid-template-columns: 1fr !important;
+    margin-top: 24px;
+  }
+
+  .wizon-service-detail__offering {
+    min-height: 0;
+    padding: 28px;
+  }
+
+  .wizon-service-detail__offering-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 12px;
+  }
+
+  .wizon-service-detail__offering > p:not(.wizon-service-detail__offering-label) {
+    font-weight: 400;
+    margin-top: 12px;
+  }
+
+  .wizon-services-consultation {
+    padding-block: 48px;
+  }
+
+  .wizon-services-consultation__inner {
+    gap: 32px;
+  }
+
+  .wizon-services-consultation__title {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .wizon-services-consultation__body {
+    font-size: 18px;
+    line-height: 27px;
+    margin-top: 20px;
+  }
+
+  .wizon-services-consultation__copy .wp-block-buttons,
+  .wizon-services-consultation__copy .wp-block-button,
+  .wizon-services-consultation__copy .wp-block-button__link {
+    width: 100%;
+  }
+
+  .wizon-services-consultation__person {
+    gap: 16px;
+    grid-template-columns: 124px minmax(0, 1fr);
+    min-height: 216px;
+    padding: 18px;
+  }
+
+  .wizon-services-consultation__portrait {
+    height: 180px;
+    width: 124px;
+  }
+
+  .wizon-services-consultation__name {
+    font-size: 28px;
+  }
+
+  .wizon-contact-content {
+    padding-block: 48px;
+  }
+
+  .wizon-contact-form-slot,
+  .wizon-contact-details {
+    padding: 23px;
+  }
+
+  .wizon-contact-form-slot {
+    min-height: 0;
+  }
+
+  .wizon-contact-form-fallback__grid {
+    gap: 24px;
+    grid-template-columns: 1fr !important;
+  }
+
+  .wizon-contact-form-fallback__field--full {
+    grid-column: auto;
+  }
+
+  .wizon-contact-form-fallback__consent {
+    margin-top: 24px;
+  }
+
+  .wizon-contact-form-fallback__actions,
+  .wizon-contact-form-fallback__actions .wp-block-button,
+  .wizon-contact-form-fallback__actions .wp-block-button__link {
+    width: 100%;
+  }
+
+  .wizon-contact-details {
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wizon-service-nav__title a,
+  .wizon-service-detail a,
+  .wizon-services-consultation a,
+  .wizon-contact-page a {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}

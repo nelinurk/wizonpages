@@ -1,0 +1,513 @@
+/*
+ * Wizon Tableau landing pages.
+ *
+ * This stylesheet deliberately relies on the design tokens supplied by the
+ * active Wizon theme. All selectors are scoped to a Tableau page root so the
+ * established site components remain unchanged elsewhere.
+ */
+
+.wizon-tableau-page,
+.wizon-tableau-services-page,
+.wizon-tableau-training-page {
+  margin: 0;
+  overflow: clip;
+}
+
+.wizon-tableau-page > .alignfull.has-global-padding,
+.wizon-tableau-services-page > .alignfull.has-global-padding,
+.wizon-tableau-training-page > .alignfull.has-global-padding {
+  padding-inline: 0;
+}
+
+.wizon-tableau-page :is(
+  .wizon-page-hero__copy,
+  .wizon-tableau-section__inner,
+  .wizon-tableau-course__inner,
+  .wizon-tableau-card,
+  .wizon-tableau-case-study__inner,
+  .wizon-tableau-custom-training__inner,
+  .wizon-tableau-testimonials,
+  .wizon-contact-cta__copy
+) {
+  text-align: left;
+}
+
+.wizon-tableau-page :is(
+  .wizon-page-hero__copy,
+  .wizon-tableau-section__inner,
+  .wizon-tableau-course__inner,
+  .wizon-tableau-card,
+  .wizon-tableau-case-study__inner,
+  .wizon-tableau-custom-training__inner,
+  .wizon-tableau-testimonials,
+  .wizon-contact-cta__copy
+) > * {
+  margin-inline: 0 !important;
+}
+
+.wizon-tableau-training-page :is(
+  .wizon-service-detail__intro,
+  .wizon-service-detail__outcome
+) > * {
+  margin-inline: 0 !important;
+  max-width: 100% !important;
+  text-align: left;
+  width: 100%;
+}
+
+.wizon-tableau-page :is(
+  .wizon-page-hero__copy,
+  .wizon-tableau-section__inner,
+  .wizon-tableau-course__inner,
+  .wizon-tableau-card,
+  .wizon-tableau-case-study__inner,
+  .wizon-tableau-custom-training__inner,
+  .wizon-tableau-testimonials,
+  .wizon-contact-cta__copy,
+  .wizon-contact-cta__inner,
+  .wizon-tableau-section__cards,
+  .wizon-tableau-course__details
+) > * {
+  margin-block: 0;
+}
+
+.wizon-tableau-page :is(
+  [id="licensing"],
+  [id="implementation-architecture"],
+  [id="management-reporting"],
+  [id="tableau-training"],
+  [id="technical-support"],
+  [id="embedded-analytics"],
+  [id="fundamentals"],
+  [id="advanced"],
+  [id="masterclass"],
+  [id="tableau-prep"],
+  [id="training-formats-requirements"]
+) {
+  scroll-margin-top: 136px;
+}
+
+/* Hero */
+.wizon-tableau-page .wizon-tableau-hero {
+  background: var(--wizon-white);
+  padding-block: clamp(76px, 8vw, 112px);
+}
+
+.wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__inner {
+  display: block;
+}
+
+.wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 960px;
+}
+
+.wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__title {
+  font-size: clamp(48px, 5vw, 72px);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  max-width: 900px;
+}
+
+.wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__lead {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.55;
+  max-width: 900px;
+}
+
+/* In-page navigation */
+.wizon-tableau-page .wizon-tableau-nav {
+  background: var(--wizon-subtle);
+  border-block: 1px solid var(--wizon-border-soft);
+  padding-block: 28px;
+}
+
+.wizon-tableau-page .wizon-tableau-nav__list {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin: 0 auto;
+  max-width: var(--wizon-content);
+  padding: 0;
+  width: calc(100% - (2 * var(--wizon-gutter)));
+}
+
+.wizon-tableau-page .wizon-tableau-nav__list > li {
+  margin: 0;
+}
+
+.wizon-tableau-page .wizon-tableau-nav__list a {
+  align-items: center;
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: 999px;
+  color: var(--wizon-ink);
+  display: inline-flex;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  min-height: 44px;
+  padding: 10px 18px;
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.wizon-tableau-page .wizon-tableau-nav__list a:hover {
+  border-color: var(--wizon-blue);
+  color: var(--wizon-blue);
+  transform: translateY(-1px);
+}
+
+.wizon-tableau-page .wizon-tableau-nav__list a:focus-visible,
+.wizon-tableau-page .wizon-tableau-case-study a:focus-visible,
+.wizon-tableau-page .wizon-tableau-testimonial a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--wizon-blue), transparent 55%);
+  outline-offset: 3px;
+}
+
+/* Shared service and course sections */
+.wizon-tableau-page :is(.wizon-tableau-section, .wizon-tableau-course) {
+  background: var(--wizon-white);
+  padding-block: 96px;
+}
+
+.wizon-tableau-page :is(.wizon-tableau-section, .wizon-tableau-course).wizon-tableau-section--subtle,
+.wizon-tableau-page .wizon-tableau-section--subtle {
+  background: var(--wizon-subtle);
+}
+
+.wizon-tableau-page :is(.wizon-tableau-section__inner, .wizon-tableau-course__inner) {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.wizon-tableau-page :is(.wizon-tableau-section, .wizon-tableau-course) .wizon-section-title {
+  font-size: clamp(36px, 3.5vw, 48px);
+  letter-spacing: -0.015em;
+  line-height: 1.16;
+  max-width: 920px;
+}
+
+.wizon-tableau-page .wizon-tableau-section__lead {
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.55;
+  max-width: 920px;
+}
+
+.wizon-tableau-page :is(.wizon-tableau-section__cards, .wizon-tableau-course__details) {
+  align-items: stretch;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+}
+
+.wizon-tableau-page .wizon-tableau-card {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: var(--wizon-radius-card);
+  box-shadow: 0 10px 32px color-mix(in srgb, var(--wizon-ink), transparent 96%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 28px;
+}
+
+.wizon-tableau-page .wizon-tableau-section:not(.wizon-tableau-section--subtle) .wizon-tableau-card,
+.wizon-tableau-page .wizon-tableau-course:not(.wizon-tableau-section--subtle) .wizon-tableau-card {
+  background: var(--wizon-subtle);
+}
+
+.wizon-tableau-page .wizon-tableau-card h3 {
+  color: var(--wizon-red);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wizon-tableau-page .wizon-tableau-card p {
+  color: var(--wizon-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.wizon-tableau-page .wizon-tableau-section__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+/* Case study, testimonials, custom training and closing CTA */
+.wizon-tableau-page .wizon-tableau-case-study,
+.wizon-tableau-page .wizon-tableau-custom-training {
+  background: var(--wizon-subtle);
+  padding-block: 88px;
+}
+
+.wizon-tableau-page .wizon-tableau-case-study__inner,
+.wizon-tableau-page .wizon-tableau-custom-training__inner {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: var(--wizon-radius-card);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 920px;
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.wizon-tableau-page :is(.wizon-tableau-case-study__inner, .wizon-tableau-custom-training__inner) .wizon-section-title {
+  font-size: clamp(34px, 3.5vw, 46px);
+  line-height: 1.16;
+}
+
+.wizon-tableau-page :is(.wizon-tableau-case-study__inner, .wizon-tableau-custom-training__inner) > p:not(.wizon-eyebrow, .wizon-page-link) {
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.wizon-tableau-page .wizon-tableau-testimonials {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 8px;
+}
+
+.wizon-tableau-page .wizon-tableau-testimonials > h3 {
+  color: var(--wizon-red);
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  grid-column: 1 / -1;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.wizon-tableau-page .wizon-tableau-testimonial {
+  background: var(--wizon-white);
+  border: 1px solid var(--wizon-border);
+  border-radius: var(--wizon-radius-card);
+  color: var(--wizon-body);
+  margin: 0;
+  padding: 28px;
+}
+
+.wizon-tableau-page .wizon-tableau-testimonial p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.wizon-tableau-page .wizon-tableau-cta.wizon-contact-cta {
+  background: var(--wizon-white);
+  padding-block: 96px;
+}
+
+.wizon-tableau-page .wizon-tableau-cta .wizon-contact-cta__inner {
+  display: block;
+}
+
+.wizon-tableau-page .wizon-tableau-cta .wizon-contact-cta__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 920px;
+}
+
+.wizon-tableau-page .wizon-tableau-cta .wizon-section-title {
+  font-size: clamp(38px, 4vw, 52px);
+  line-height: 1.14;
+}
+
+.wizon-tableau-page .wizon-tableau-cta .wizon-contact-cta__lead {
+  color: var(--wizon-body);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .wizon-tableau-page .wizon-tableau-hero {
+    padding-block: 80px;
+  }
+
+  .wizon-tableau-page :is(.wizon-tableau-section, .wizon-tableau-course),
+  .wizon-tableau-page .wizon-tableau-cta.wizon-contact-cta {
+    padding-block: 76px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-case-study,
+  .wizon-tableau-page .wizon-tableau-custom-training {
+    padding-block: 72px;
+  }
+
+  .wizon-tableau-page :is(.wizon-tableau-section__cards, .wizon-tableau-course__details),
+  .wizon-tableau-page .wizon-tableau-testimonials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wizon-tableau-page .wizon-tableau-testimonial:last-child:nth-child(even) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .wizon-tableau-page .wizon-tableau-hero {
+    padding-block: 64px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__copy {
+    gap: 20px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__title {
+    font-size: clamp(42px, 9vw, 56px);
+  }
+
+  .wizon-tableau-page .wizon-tableau-nav {
+    padding-block: 20px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-nav__list {
+    gap: 8px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-nav__list a {
+    font-size: 14px;
+    min-height: 40px;
+    padding: 8px 14px;
+  }
+
+  .wizon-tableau-page :is(.wizon-tableau-section, .wizon-tableau-course),
+  .wizon-tableau-page .wizon-tableau-cta.wizon-contact-cta {
+    padding-block: 60px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-case-study,
+  .wizon-tableau-page .wizon-tableau-custom-training {
+    padding-block: 56px;
+  }
+
+  .wizon-tableau-page :is(.wizon-tableau-section__inner, .wizon-tableau-course__inner) {
+    gap: 26px;
+  }
+
+  .wizon-tableau-page :is(.wizon-tableau-section__cards, .wizon-tableau-course__details),
+  .wizon-tableau-page .wizon-tableau-testimonials {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wizon-tableau-page .wizon-tableau-testimonial:last-child:nth-child(even) {
+    grid-column: auto;
+  }
+
+  .wizon-tableau-page .wizon-tableau-card,
+  .wizon-tableau-page .wizon-tableau-testimonial {
+    padding: 24px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-section__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .wizon-tableau-page .wizon-tableau-hero {
+    padding-block: 48px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__title {
+    font-size: 38px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .wizon-tableau-page .wizon-tableau-hero .wizon-page-hero__lead,
+  .wizon-tableau-page .wizon-tableau-section__lead,
+  .wizon-tableau-page .wizon-tableau-cta .wizon-contact-cta__lead,
+  .wizon-tableau-page :is(.wizon-tableau-case-study__inner, .wizon-tableau-custom-training__inner) > p:not(.wizon-eyebrow, .wizon-page-link) {
+    font-size: 17px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-nav__list {
+    width: calc(100% - 36px);
+  }
+
+  .wizon-tableau-page :is(.wizon-tableau-section, .wizon-tableau-course),
+  .wizon-tableau-page .wizon-tableau-cta.wizon-contact-cta {
+    padding-block: 48px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-case-study,
+  .wizon-tableau-page .wizon-tableau-custom-training {
+    padding-block: 44px;
+  }
+
+  .wizon-tableau-page :is(.wizon-tableau-section, .wizon-tableau-course) .wizon-section-title,
+  .wizon-tableau-page :is(.wizon-tableau-case-study__inner, .wizon-tableau-custom-training__inner) .wizon-section-title,
+  .wizon-tableau-page .wizon-tableau-cta .wizon-section-title {
+    font-size: 34px;
+    line-height: 1.16;
+  }
+
+  .wizon-tableau-page .wizon-tableau-card,
+  .wizon-tableau-page .wizon-tableau-testimonial {
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .wizon-tableau-page .wizon-tableau-section__actions,
+  .wizon-tableau-page .wizon-tableau-section__actions .wp-block-button,
+  .wizon-tableau-page .wizon-tableau-section__actions .wp-block-button__link,
+  .wizon-tableau-page .wizon-tableau-cta .wp-block-button,
+  .wizon-tableau-page .wizon-tableau-cta .wp-block-button__link,
+  .wizon-tableau-page .wizon-tableau-custom-training .wp-block-button,
+  .wizon-tableau-page .wizon-tableau-custom-training .wp-block-button__link {
+    width: 100%;
+  }
+
+  .wizon-tableau-page :is(
+    [id="licensing"],
+    [id="implementation-architecture"],
+    [id="management-reporting"],
+    [id="tableau-training"],
+    [id="technical-support"],
+    [id="embedded-analytics"],
+    [id="fundamentals"],
+    [id="advanced"],
+    [id="masterclass"],
+    [id="tableau-prep"],
+    [id="training-formats-requirements"]
+  ) {
+    scroll-margin-top: 104px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wizon-tableau-page .wizon-tableau-nav__list a {
+    transition: none;
+  }
+}

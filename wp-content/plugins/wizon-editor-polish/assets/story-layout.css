@@ -1,0 +1,5 @@
+/* Align the first text lines despite the label and body using different sizes.
+   On mobile each item occupies its own grid row, preserving the stacked layout. */
+.wizon-story .wizon-story__detail {
+    align-items: first baseline;
+}

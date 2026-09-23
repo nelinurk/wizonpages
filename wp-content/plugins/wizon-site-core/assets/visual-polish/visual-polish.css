@@ -1,0 +1,474 @@
+/* The contact grid owns the gap; WordPress flow margins must not offset its second card. */
+.wizon-contact-content__inner > * {
+  margin-block-start: 0;
+}
+
+/* Competency cards follow their content instead of stretching short lists downward. */
+body .wizon-competencies__grid {
+  align-items: start;
+}
+body .wizon-competency-card {
+  min-height: 0;
+}
+body .wizon-competency-card__title {
+  min-height: 0;
+}
+body .wizon-competency-card__list {
+  margin: 0;
+}
+
+/* Compact data-chart accents. Never target generic HRs, borders, logos or images. */
+body :is(.wizon-service-nav__accent, .wizon-service-detail__accent, .wizon-contact-details__accent, .wizon-blue-rule, .wizon-competency-card__accent) {
+  background: transparent url('accent-data-chart.svg') left center / contain no-repeat !important;
+  border: 0 !important;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 32px;
+  height: 32px !important;
+  max-width: 36px !important;
+  min-width: 0;
+  opacity: 1;
+  width: 36px !important;
+}
+/* Former standalone proof rule, if an older reusable pattern is still used. */
+body .wizon-page-proof::before {
+  background: transparent url('accent-data-chart.svg') left center / contain no-repeat;
+  display: block;
+  flex: 0 0 32px;
+  height: 32px;
+  margin-bottom: 12px;
+  position: static;
+  width: 36px;
+}
+/* Replace vertical decorative rules; retain all grey card/row separators. */
+body :is(.wizon-competencies__context, .wizon-competencies__credibility) {
+  padding-left: 64px;
+}
+body :is(.wizon-competencies__context, .wizon-competencies__credibility)::before {
+  background: transparent url('accent-data-chart.svg') center / contain no-repeat;
+  bottom: auto;
+  height: 28px;
+  left: 22px;
+  top: 24px;
+  width: 28px;
+}
+body .wizon-privacy-hero__meta {
+  border-left: 0;
+  padding-left: 0;
+}
+body .wizon-privacy-hero__meta::before {
+  background: transparent url('accent-data-chart.svg') left center / contain no-repeat;
+  content: '';
+  display: block;
+  height: 32px;
+  width: 36px;
+}
+
+/* The four existing home service cards retain their text, order and native blocks. */
+body:not(.wizon-home-experiment) .wizon-services__grid {
+  gap: 22px;
+  margin-top: 30px;
+}
+body:not(.wizon-home-experiment) .wizon-services__card {
+  min-height: 0;
+  overflow: hidden;
+  padding: 26px 28px 28px;
+  position: relative;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+body:not(.wizon-home-experiment) .wizon-services__accent:empty {
+  background: transparent url('roadmap.svg') center / contain no-repeat !important;
+  border: 0 !important;
+  border-radius: 0;
+  height: 48px !important;
+  margin-bottom: 16px;
+  max-width: 48px !important;
+  width: 48px !important;
+  transition: transform 220ms ease;
+}
+body:not(.wizon-home-experiment) .wizon-services__card:nth-child(2) .wizon-services__accent:empty { background-image: url('platform.svg') !important; }
+body:not(.wizon-home-experiment) .wizon-services__card:nth-child(3) .wizon-services__accent:empty { background-image: url('analytics.svg') !important; }
+body:not(.wizon-home-experiment) .wizon-services__card:nth-child(4) .wizon-services__accent:empty { background-image: url('ai.svg') !important; }
+body:not(.wizon-home-experiment) .wizon-services__card::after {
+  background: #0076c8;
+  border-radius: 3px 3px 0 0;
+  bottom: 0;
+  content: '';
+  height: 3px;
+  left: 20px;
+  pointer-events: none;
+  position: absolute;
+  right: 20px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+body:not(.wizon-home-experiment) .wizon-services__card:focus-within {
+  border-color: #b9d7ed;
+  box-shadow: 0 8px 22px rgb(17 17 17 / 6%);
+}
+body:not(.wizon-home-experiment) .wizon-services__card:focus-within::after { transform: scaleX(1); }
+@media (hover: hover) and (pointer: fine) {
+  body:not(.wizon-home-experiment) .wizon-services__card:hover {
+    border-color: #b9d7ed;
+    box-shadow: 0 8px 22px rgb(17 17 17 / 6%);
+    transform: translateY(-2px);
+  }
+  body:not(.wizon-home-experiment) .wizon-services__card:hover::after { transform: scaleX(1); }
+  body:not(.wizon-home-experiment) .wizon-services__card:hover .wizon-services__accent:empty { transform: translateY(-2px); }
+}
+body .wizon-services__button > .wp-block-button__link {
+  background: #c71931;
+  border: 2px solid #c71931;
+  box-shadow: 0 4px 12px rgb(199 25 49 / 12%);
+  color: #fff;
+  font-weight: 700;
+  min-height: 52px;
+  padding: 16px 22px;
+  text-decoration: none;
+}
+body .wizon-services__button > .wp-block-button__link:hover { background: #a91429; border-color: #a91429; color: #fff; }
+body .wizon-services__button > .wp-block-button__link:focus-visible { outline: 3px solid #0076c8; outline-offset: 4px; }
+/* Optional native image class. Nothing recolours arbitrary images or company logos. */
+body .wizon-hero-icon-refined img { height: auto; object-fit: contain; }
+
+/* Topic icons: the six requested Services/Tableau/Snowflake pages only. */
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(.wizon-service-nav__card, .wizon-service-detail) {
+  --wizon-topic-icon: url('topic-platform.svg');
+}
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(.wizon-service-nav__accent, .wizon-service-detail__accent) {
+  background-image: var(--wizon-topic-icon) !important;
+}
+/* Match each existing link destination and section ID, never content or card position. */
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#andmeaudit"], [href="#data-audit"])),
+  .wizon-service-detail:is(#andmeaudit, #data-audit)
+) { --wizon-topic-icon: url('topic-roadmap.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#andmeplatvormid"], [href="#data-platforms"], [href="#platvormist"], [href="#juurutus-ja-arhitektuur"], [href="#juurutus"], [href="#implementation"])),
+  .wizon-service-detail:is(#andmeplatvormid, #data-platforms, #platvormist, #juurutus-ja-arhitektuur, #juurutus, #implementation),
+  .wizon-tableau-nav__list > li > a[href="#implementation-architecture"],
+  .wizon-tableau-section#implementation-architecture
+) { --wizon-topic-icon: url('topic-platform.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#juhtimisaruandlus"], [href="#management-reporting"])),
+  .wizon-service-detail:is(#juhtimisaruandlus, #management-reporting),
+  .wizon-tableau-nav__list > li > a[href="#management-reporting"],
+  .wizon-tableau-section#management-reporting
+) { --wizon-topic-icon: url('topic-analytics.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#turvaline-ai"], [href="#secure-ai"], [href="#ai"], [href="#tooted-ja-ai"])),
+  .wizon-service-detail:is(#turvaline-ai, #secure-ai, #ai, #tooted-ja-ai)
+) { --wizon-topic-icon: url('topic-ai.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#kaasajastamine"], [href="#modernisation"], [href="#migratsioon"], [href="#migration"])),
+  .wizon-service-detail:is(#kaasajastamine, #modernisation, #migratsioon, #migration)
+) { --wizon-topic-icon: url('topic-migration.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#spetsialist"], [href="#consultant"], [href="#specialist"])),
+  .wizon-service-detail:is(#spetsialist, #consultant, #specialist)
+) { --wizon-topic-icon: url('topic-specialist.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#tableau"], [href="#litsentsid"])),
+  .wizon-service-detail:is(#tableau, #litsentsid),
+  .wizon-tableau-nav__list > li > a[href="#licensing"],
+  .wizon-tableau-section#licensing
+) { --wizon-topic-icon: url('topic-license.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a[href="#koolitused"]),
+  .wizon-service-detail#koolitused,
+  .wizon-tableau-nav__list > li > a[href="#tableau-training"],
+  .wizon-tableau-section#tableau-training
+) { --wizon-topic-icon: url('topic-training.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a[href="#tehniline-tugi"]),
+  .wizon-service-detail#tehniline-tugi,
+  .wizon-tableau-nav__list > li > a[href="#technical-support"],
+  .wizon-tableau-section#technical-support
+) { --wizon-topic-icon: url('topic-support.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a[href="#embedded-analytics"]),
+  .wizon-service-detail#embedded-analytics,
+  .wizon-tableau-nav__list > li > a[href="#embedded-analytics"],
+  .wizon-tableau-section#embedded-analytics
+) { --wizon-topic-icon: url('topic-embedded.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#optimeerimine"], [href="#optimisation"])),
+  .wizon-service-detail:is(#optimeerimine, #optimisation)
+) { --wizon-topic-icon: url('topic-optimization.svg'); }
+body:is(.page-id-23, .page-id-32, .page-id-87, .page-id-89, .page-id-387, .page-id-389) :is(
+  .wizon-service-nav__card:has(a:is([href="#turvalisus"], [href="#security"])),
+  .wizon-service-detail:is(#turvalisus, #security)
+) { --wizon-topic-icon: url('topic-security.svg'); }
+/* EN Tableau retains its client's different native navigation and section markup. */
+body.page-id-89 .wizon-tableau-nav__list > li > a:is([href="#licensing"], [href="#implementation-architecture"], [href="#management-reporting"], [href="#tableau-training"], [href="#technical-support"], [href="#embedded-analytics"])::before,
+body.page-id-89 .wizon-tableau-section:is(#licensing, #implementation-architecture, #management-reporting, #tableau-training, #technical-support, #embedded-analytics) > .wizon-tableau-section__inner > h2.wizon-section-title::before {
+  background: var(--wizon-topic-icon) left center / contain no-repeat;
+  content: '';
+  display: block;
+  flex: 0 0 36px;
+  height: 32px;
+  width: 36px;
+}
+body.page-id-89 .wizon-tableau-nav__list > li > a::before { margin-right: 10px; }
+body.page-id-89 .wizon-tableau-section > .wizon-tableau-section__inner > h2.wizon-section-title::before { margin-bottom: 14px; }
+/* Let long platform navigation words wrap naturally without single-letter fragments. */
+body:is(.page-id-87, .page-id-387, .page-id-389) .wizon-service-nav__title {
+  font-size: clamp(22px, 1.8vw, 26px);
+  line-height: 1.25;
+}
+body:is(.page-id-87, .page-id-387, .page-id-389) .wizon-service-nav__title,
+body:is(.page-id-87, .page-id-387, .page-id-389) .wizon-service-nav__title a {
+  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+/* End topic icons. */
+
+/* Main Services compact outcome rows; approved Tableau/Snowflake layouts stay unchanged. */
+body .wizon-services-page:not(.wizon-tableau-page) .wizon-service-detail__outcomes {
+  align-self: start;
+  align-content: start;
+}
+body .wizon-services-page:not(.wizon-tableau-page) .wizon-service-detail__outcome { min-height: 0; }
+body:is(.page-id-23, .page-id-32) .wizon-services-page:not(.wizon-tableau-page) .wizon-service-detail__outcomes {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 16px;
+}
+body:is(.page-id-23, .page-id-32) .wizon-services-page:not(.wizon-tableau-page) .wizon-service-detail__outcome {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  min-height: 0;
+  padding: 20px;
+}
+body:is(.page-id-23, .page-id-32) .wizon-services-page:not(.wizon-tableau-page) .wizon-service-detail__outcome > p {
+  margin: 0 !important;
+  max-width: none;
+  min-width: 0;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  body:is(.page-id-23, .page-id-32) .wizon-services-page:not(.wizon-tableau-page) .wizon-service-detail__outcome {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+
+/* Forwarding buttons get a clear colour state without the previous one-pixel jump. */
+body :is(.wp-block-button > .wp-block-button__link, .wizon-services__all-link, .wizon-references__all-link, .wizon-event__link) {
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+body :is(.wp-block-button > .wp-block-button__link, .wizon-services__all-link, .wizon-references__all-link, .wizon-event__link):is(:hover, :focus-visible) {
+  background: #17212b;
+  border-color: #17212b;
+  box-shadow: 0 4px 12px rgb(17 17 17 / 12%);
+  color: #fff;
+  transform: none !important;
+}
+body :is(.wp-block-button > .wp-block-button__link, .wizon-services__all-link, .wizon-references__all-link, .wizon-event__link):focus-visible {
+  outline: 3px solid #0076c8;
+  outline-offset: 4px;
+}
+body .wizon-service-detail__actions .wizon-button--secondary > .wp-block-button__link {
+  background: #c71931;
+  border: 2px solid #c71931;
+  color: #fff;
+  box-shadow: 0 4px 12px rgb(199 25 49 / 12%);
+}
+body :is(.wizon-button--primary, .wizon-final-cta__button, .wizon-services__button, .wizon-service-detail__actions .wizon-button--secondary) > .wp-block-button__link:is(:hover, :focus-visible) {
+  background: #a91429;
+  border-color: #a91429;
+  color: #fff;
+  transform: none !important;
+}
+
+/* Compact main-home testimonials. The experiment keeps its independent slider/styles. */
+body:not(.wizon-home-experiment) .wizon-testimonials { padding-block: 64px; }
+body:not(.wizon-home-experiment) .wizon-testimonials__inner {
+  grid-template-columns: minmax(200px, .7fr) minmax(0, 1.65fr);
+  gap: 40px;
+  align-items: start;
+}
+body:not(.wizon-home-experiment) .wizon-testimonials__header .wizon-section-title {
+  font-size: clamp(28px, 2.4vw, 34px);
+  line-height: 1.2;
+}
+body:not(.wizon-home-experiment) :is(.wizon-testimonials__grid, .wizon-testimonials__cards) {
+  min-width: 0;
+  gap: 20px;
+  background: transparent;
+}
+body:not(.wizon-home-experiment) .wizon-testimonials__card {
+  margin: 0;
+  padding: 28px;
+  border: 1px solid #e3e7eb;
+  border-radius: 18px;
+  box-shadow: 0 5px 16px rgb(17 17 17 / 4%);
+}
+body:not(.wizon-home-experiment) .wizon-testimonials__quote {
+  font-family: var(--wizon-font-body, "Roboto"), Arial, sans-serif;
+  font-size: clamp(18px, 1.5vw, 21px);
+  font-weight: 400;
+  line-height: 1.55;
+  gap: 14px;
+}
+body:not(.wizon-home-experiment) .wizon-testimonials__quote::before {
+  width: 27px;
+  height: 20px;
+  flex-basis: 20px;
+}
+body:not(.wizon-home-experiment) .wizon-testimonials__person { margin-top: 20px; }
+body:not(.wizon-home-experiment) .wizon-main-testimonial-stage { min-width: 0; }
+body:not(.wizon-home-experiment) .wizon-main-testimonial-stage.is-enhanced .wizon-testimonials__card[hidden] { display: none !important; }
+body:not(.wizon-home-experiment) .wizon-main-testimonial-stage.is-enhanced .wizon-testimonials__card.is-placeholder { display: none !important; }
+body:not(.wizon-home-experiment) .wizon-main-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 14px;
+  font-family: var(--wizon-font-ui, "Titillium Web"), Arial, sans-serif;
+}
+body:not(.wizon-home-experiment) .wizon-main-slider__status { font-size: 14px; color: #4b5560; }
+body:not(.wizon-home-experiment) :is(.wizon-main-slider__dots, .wizon-main-slider__arrows) { display: flex; align-items: center; flex-wrap: wrap; }
+body:not(.wizon-home-experiment) .wizon-main-slider__arrows { gap: 8px; }
+body:not(.wizon-home-experiment) .wizon-main-slider button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid #87929e;
+  border-radius: 50%;
+  background: #fff;
+  color: #17212b;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+body:not(.wizon-home-experiment) .wizon-main-slider button:is(:hover, :focus-visible) { background: #17212b; border-color: #17212b; color: #fff; }
+body:not(.wizon-home-experiment) .wizon-main-slider button:focus-visible { outline: 3px solid #0076c8; outline-offset: 3px; }
+body:not(.wizon-home-experiment) .wizon-main-slider__dots button { border-color: transparent; background: transparent; }
+body:not(.wizon-home-experiment) .wizon-main-slider__dots button::before { content: ''; width: 8px; height: 8px; border-radius: 5px; background: #87929e; }
+body:not(.wizon-home-experiment) .wizon-main-slider__dots button[aria-current="true"]::before { width: 22px; background: #c71931; }
+body:not(.wizon-home-experiment) .wizon-main-slider__dots button:is(:hover, :focus-visible)::before { background: #17212b; }
+
+/* Responsive native-block explanation replacing the old tablet/mobile diagram only. */
+body .wizon-tech-approach__steps { display: none !important; }
+body .wizon-tech-approach__step {
+  display: grid !important;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  margin: 0 !important;
+}
+body .wizon-tech-approach__step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  margin: 0 !important;
+  border-radius: 50%;
+  background: #eaf4fb;
+  color: #0076c8;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+body .wizon-tech-approach__step-label {
+  min-width: 0;
+  margin: 0 !important;
+  color: #17212b;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+@media (max-width: 1100px) {
+  body .wizon-tech-approach__steps {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px;
+    margin-block: 24px 0;
+  }
+}
+@media (max-width: 782px) {
+  body .wizon-tech-approach__steps { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  /* Reuse the measured visible toolbar height: 46px at the top, 0px after it scrolls away. */
+  body.admin-bar .wizon-header .wp-block-navigation__responsive-container.is-menu-open {
+    top: var(--wizon-toolbar-height, 0px);
+    bottom: 0;
+    height: auto;
+    max-height: calc(100dvh - var(--wizon-toolbar-height, 0px));
+  }
+  body.admin-bar:has(.wizon-header .wp-block-navigation__responsive-container.is-menu-open) .wizon-header__languages {
+    top: calc(24px + var(--wizon-toolbar-height, 0px));
+  }
+  /* The container already accounts for the toolbar; avoid WordPress adding it a second time. */
+  body.admin-bar .wizon-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog {
+    margin-top: 0;
+  }
+}
+/* Meist/About managed portraits: show the whole client-supplied photo without changing card order or columns. */
+body:is(.page-id-26, .page-id-35) .wizon-managed-person .wizon-person-card__portrait {
+  height: auto;
+  background: #f4f5f6;
+}
+body:is(.page-id-26, .page-id-35) .wizon-managed-person .wizon-person-card__portrait > .wizon-managed-person__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  max-height: 420px;
+  object-fit: contain;
+  /* Preserve saved focal coordinates for rollback while centering the complete image now. */
+  object-position: center !important;
+}
+/* Match the client's compact Roboto quote treatment without changing the preview carousel. */
+body.wizon-home-experiment .wizon-testimonials__quote,
+body.wizon-home-experiment .wizon-testimonials__quote p {
+  font-family: var(--wizon-font-body, "Roboto"), Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  body.wizon-home-experiment .wizon-testimonials__quote,
+  body.wizon-home-experiment .wizon-testimonials__quote p { font-size: 18px; }
+}
+/* The shared Rainer contact portrait keeps its square cover crop with the face anchored at the top. */
+body .wizon-final-cta__portrait img { object-position: 50% 0%; }
+@media (max-width: 900px) {
+  body:not(.wizon-home-experiment) .wizon-testimonials__inner { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 767px) {
+  body:not(.wizon-home-experiment) .wizon-services__grid { gap: 16px; }
+  body:not(.wizon-home-experiment) .wizon-services__card { padding: 24px; }
+  body .wizon-services__button,
+  body .wizon-services__button > .wp-block-button__link { box-sizing: border-box; width: 100%; }
+  body .wizon-services__button > .wp-block-button__link { justify-content: center; text-align: center; }
+  body :is(.wizon-competencies__context, .wizon-competencies__credibility) { padding-left: 58px; }
+  body :is(.wizon-competencies__context, .wizon-competencies__credibility)::before { left: 18px; top: 22px; width: 26px; height: 26px; }
+  body:not(.wizon-home-experiment) .wizon-testimonials { padding-block: 48px; }
+  body:not(.wizon-home-experiment) .wizon-testimonials__card { padding: 22px; }
+  body:not(.wizon-home-experiment) .wizon-testimonials__quote { font-size: 18px; line-height: 1.5; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body :is(.wp-block-button > .wp-block-button__link, .wizon-services__all-link, .wizon-references__all-link, .wizon-event__link) { transition: none !important; }
+  body:not(.wizon-home-experiment) .wizon-services__card,
+  body:not(.wizon-home-experiment) .wizon-services__card::after,
+  body:not(.wizon-home-experiment) .wizon-services__accent:empty,
+  body .wizon-services__button > .wp-block-button__link { animation: none !important; transition: none !important; }
+  body:not(.wizon-home-experiment) .wizon-services__card:hover,
+  body:not(.wizon-home-experiment) .wizon-services__card:hover .wizon-services__accent:empty,
+  body .wizon-services__button > .wp-block-button__link:hover { transform: none !important; }
+}
